@@ -1,6 +1,6 @@
 # FitToll
 
-**Break the scroll. Pay the toll.**
+**Pay the toll to scroll.**
 
 FitToll is a digital wellness app that fights doom-scrolling by requiring real, camera-verified physical exercises before you can open blocked apps.
 
