@@ -59,7 +59,7 @@ The majority of your data is stored locally on your device using platform-native
 
 ### Firebase Authentication
 
-Your authentication credentials (email, authentication tokens) are managed by Firebase Authentication, a Google service. Firebase Authentication data is governed by [Google's Privacy Policy](https://policies.google.com/privacy). We only use Firebase for authentication — no other Firebase services (Analytics, Crashlytics, etc.) are used.
+Your authentication credentials (email, authentication tokens) are managed by Firebase Authentication, a Google service. Firebase Authentication data is governed by [Google's Privacy Policy](https://policies.google.com/privacy). We use Firebase Authentication for login and Firebase Cloud Functions for promo code validation. No other Firebase services (Analytics, Crashlytics, etc.) are used.
 
 ### Data Retention
 
@@ -68,9 +68,9 @@ Your authentication credentials (email, authentication tokens) are managed by Fi
 
 ## Data Sharing
 
-We do not sell, rent, trade, or share your personal data with any third parties. Period.
+We do not sell, rent, or trade your personal data. We share limited data with service providers only as necessary to operate the app (see Third-Party Services below).
 
-The only external service we use is Firebase Authentication for login purposes. No other data leaves your device.
+Data shared with external services is limited to what is listed in the Third-Party Services table below. All exercise verification and pose detection processing happens entirely on your device.
 
 ## Third-Party Services
 
@@ -79,6 +79,8 @@ FitToll uses the following third-party services:
 | Service | Purpose | Data Shared |
 |---------|---------|-------------|
 | Firebase Authentication | User login and account management | Email address, authentication tokens |
+| Firebase Cloud Functions | Promo code validation | Promo code text, authentication token |
+| [RevenueCat](https://www.revenuecat.com/privacy/) | Subscription management and billing | Firebase UID, purchase transactions, device metadata |
 | Google Sign-In | Optional login method | Authentication credentials (handled by Google) |
 | Apple Sign-In | Optional login method | Authentication credentials (handled by Apple) |
 | Facebook Login | Optional login method | Authentication credentials (handled by Facebook) |
@@ -98,12 +100,22 @@ FitToll requires certain device permissions to function:
 | **Camera** | To verify exercises through pose estimation | Only during active exercise sessions |
 | **Screen Time / Usage Access** | To detect when blocked apps are opened and apply shields | Continuously in the background (iOS: FamilyControls; Android: UsageStats/Accessibility) |
 | **App Groups (iOS)** | To share blocking preferences between the main app and system extensions | Continuously in the background |
+| **Display Over Other Apps** (Android) | To show the exercise screen when a blocked app is opened | When a blocked app is detected |
+| **App List Access** (Android) | To identify installed apps for blocking selection | When selecting apps to block |
+| **Notifications** | To alert you when bypass windows are expiring | When a bypass is active |
+| **Background Service** (Android) | To monitor blocked app launches in the background | Continuously while blocking is enabled |
 
 You can revoke any permission at any time through your device settings. Revoking the camera permission will prevent exercise verification. Revoking Screen Time / Usage Access will disable the app blocking feature.
+
+## International Data Transfers
+
+FitToll is developed in India. Authentication data processed by Firebase and subscription data processed by RevenueCat may be stored and processed in the United States or other countries. These transfers are governed by the service providers' Standard Contractual Clauses and data processing agreements. By using FitToll, you consent to this transfer of information.
 
 ## Children's Privacy
 
 FitToll is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at aurogpt10@gmail.com and we will take steps to remove that information.
+
+For users in the European Economic Area, the applicable minimum age may be up to 16 years depending on your country of residence, in accordance with local implementations of the GDPR.
 
 ## Your Rights
 
@@ -117,6 +129,10 @@ You have the following rights regarding your data:
 ### For EU/EEA Users (GDPR)
 
 If you are located in the European Union or European Economic Area, you have additional rights under the General Data Protection Regulation (GDPR), including the right to access, rectify, erase, restrict processing, and data portability. To exercise these rights, contact us at aurogpt10@gmail.com.
+
+Our legal bases for processing your data under GDPR Article 6 are:
+- **Contractual necessity** (Art. 6(1)(b)): Account creation, authentication, and core app functionality
+- **Legitimate interest** (Art. 6(1)(f)): Exercise verification for app blocking (the core service you signed up for)
 
 ### For California Users (CCPA)
 

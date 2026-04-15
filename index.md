@@ -4,8 +4,8 @@
 
 FitToll is a digital wellness app that fights doom-scrolling by requiring real, camera-verified physical exercises before you can open blocked apps.
 
-- [Privacy Policy](privacy-policy.md)
-- [Terms of Use](terms-of-use.md)
+- [Privacy Policy](privacy-policy)
+- [Terms of Use](terms-of-use)
 
 ## Contact
 

@@ -51,6 +51,23 @@ FitToll uses platform-provided APIs (Apple FamilyControls/Screen Time API on iOS
 - **Your Responsibility:** You are solely responsible for deciding which apps to block. FitToll does not recommend or require blocking any specific apps.
 - **Emergency Access:** App blocking should never prevent access to emergency services. FitToll does not block system-critical apps, phone, or emergency services.
 
+## Subscription and In-App Purchases
+
+### Premium Subscription
+FitToll offers optional premium subscriptions that unlock additional features. Subscriptions are processed through the Apple App Store or Google Play Store.
+
+### Auto-Renewal
+Subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours prior to the end of the current period.
+
+### Cancellation
+You can cancel your subscription at any time through your device's subscription management settings (App Store or Google Play). Cancellation takes effect at the end of the current billing period — you retain access to premium features until then.
+
+### Refunds
+Refund requests are handled by the Apple App Store or Google Play Store according to their respective refund policies. We do not process refunds directly.
+
+### Promotional Access
+Promotional codes may be offered from time to time, granting temporary premium access. Promotional access is non-transferable and subject to the terms specified at the time of the offer.
+
 ## Exercise Verification
 
 ### Camera-Based Verification
