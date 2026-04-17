@@ -1,6 +1,6 @@
 # FitToll - Privacy Policy
 
-**Last Updated:** April 5, 2026
+**Last Updated:** April 17, 2026
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Welcome to FitToll. We built this app to help you break doom-scrolling habits th
 
 ## Who We Are
 
-FitToll is developed and maintained by Aurobindo Gupta ("we", "us", "our"). If you have questions about this policy, you can reach us at aurogpt10@gmail.com.
+FitToll is developed and maintained by Aurobindo Gupta and Team ("we", "us", "our"). If you have questions about this policy, you can reach us at aurogpt10@gmail.com.
 
 ## Data We Collect
 
@@ -156,4 +156,4 @@ If you have any questions, concerns, or requests regarding this Privacy Policy o
 
 ---
 
-*This privacy policy is effective as of April 5, 2026.*
+*This privacy policy is effective as of April 17, 2026.*

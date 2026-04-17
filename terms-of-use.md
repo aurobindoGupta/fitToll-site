@@ -1,6 +1,6 @@
 # FitToll - Terms of Use
 
-**Last Updated:** April 5, 2026
+**Last Updated:** April 17, 2026
 
 ## Agreement to Terms
 
@@ -189,4 +189,4 @@ If you have any questions about these Terms, please contact us:
 
 ---
 
-*These Terms of Use are effective as of April 5, 2026.*
+*These Terms of Use are effective as of April 17, 2026.*
