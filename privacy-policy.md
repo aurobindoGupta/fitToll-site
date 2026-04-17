@@ -122,7 +122,7 @@ For users in the European Economic Area, the applicable minimum age may be up to
 You have the following rights regarding your data:
 
 - **Access:** You can view all your data directly within the app (exercise history, preferences, statistics).
-- **Deletion:** You can delete your account and all associated data by contacting us at aurogpt10@gmail.com. Local data can be deleted by uninstalling the app.
+- **Deletion:** You can permanently delete your account directly from within the app: open **Settings** (profile icon on Home), scroll to the bottom, and tap **Delete Account**. This irreversibly deletes your Firebase authentication record. Local app data (blocking config, exercise history, statistics) stays on your device until you uninstall the app or clear app data. If you cannot access the in-app option for any reason, you can also request deletion by emailing aurogpt10@gmail.com.
 - **Portability:** Since your data is stored locally on your device, you already have direct access to it.
 - **Opt-Out:** You can stop using any feature at any time. Uninstalling the app removes all local data.
 
