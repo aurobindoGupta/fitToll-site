@@ -8,13 +8,13 @@ Welcome to FitToll. We built this app to help you break doom-scrolling habits th
 
 ## Who We Are
 
-FitToll is developed and maintained by Aurobindo Gupta and Team ("we", "us", "our"). If you have questions about this policy, you can reach us at aurogpt10@gmail.com.
+FitToll is developed and maintained by Aurobindo Gupta ("we", "us", "our"). If you have questions about this policy, you can reach us at aurogpt10@gmail.com.
 
 ## Data We Collect
 
 ### Information You Provide
 
-- **Account Information:** When you create an account, we collect your email address and display name through our authentication providers (Google Sign-In, Apple Sign-In, Facebook Login, or email/password). This information is used solely for account creation and login.
+- **Account Information:** When you create an account, we collect your email address and display name through our authentication providers (Sign in with Google, Sign in with Apple, Facebook Login, or email/password). This information is used solely for account creation and login.
 
 - **App Preferences:** Your settings, such as which apps you choose to block, exercise difficulty level, and unlock duration. These preferences are stored locally on your device.
 
@@ -36,7 +36,7 @@ FitToll is developed and maintained by Aurobindo Gupta and Team ("we", "us", "ou
 
 - **Health Data:** While FitToll involves physical exercise, we do not integrate with Apple Health, Google Fit, or any health data platform.
 
-- **Analytics or Tracking:** We do not use third-party analytics, advertising SDKs, or tracking tools.
+- **Analytics or Tracking:** We do not use third-party behavioral analytics SDKs (such as Google Analytics, Firebase Analytics, Mixpanel, or Amplitude), advertising SDKs, or cross-app tracking tools. RevenueCat (used for subscription billing) collects standard device metadata necessary for entitlement management — see the Third-Party Services section below for the full disclosure.
 
 ## How We Use Your Data
 
@@ -94,8 +94,8 @@ FitToll uses the following third-party services:
 | Firebase Authentication | User login and account management | Email address, authentication tokens |
 | Firebase Cloud Functions | Promo code validation | Promo code text, authentication token |
 | [RevenueCat](https://www.revenuecat.com/privacy/) | Subscription management and billing | Firebase UID, purchase transactions, device metadata |
-| Google Sign-In | Optional login method | Authentication credentials (handled by Google) |
-| Apple Sign-In | Optional login method | Authentication credentials (handled by Apple) |
+| Sign in with Google | Optional login method | Authentication credentials (handled by Google) |
+| Sign in with Apple | Optional login method | Authentication credentials (handled by Apple) |
 | Facebook Login | Optional login method | Authentication credentials (handled by Facebook) |
 
 Each of these services has its own privacy policy. We encourage you to review them:
