@@ -1,6 +1,6 @@
 # FitToll - Privacy Policy
 
-**Last Updated:** April 17, 2026
+**Last Updated:** April 24, 2026
 
 ## Introduction
 
@@ -61,6 +61,19 @@ The majority of your data is stored locally on your device using platform-native
 
 Your authentication credentials (email, authentication tokens) are managed by Firebase Authentication, a Google service. Firebase Authentication data is governed by [Google's Privacy Policy](https://policies.google.com/privacy). We use Firebase Authentication for login and Firebase Cloud Functions for promo code validation. No other Firebase services (Analytics, Crashlytics, etc.) are used.
 
+### Promotional Code Validation
+
+When you attempt to redeem a promotional code, FitToll temporarily records your email address, the code you attempted, and a running attempt count in a secure Firestore collection named `promo_attempts`. This record exists solely to prevent abuse of single-use codes (for example, automated scraping or brute-force redemption attempts).
+
+These records are:
+
+- **Limited in scope:** email + attempted code + attempt count only. No device identifiers, IP addresses, or profile data are stored.
+- **Short-lived:** automatically deleted seven (7) days after your most recent attempt.
+- **Siloed:** not linked to your public user profile, your exercise history, or your subscription record.
+- **Not shared:** never transmitted to third-party services for advertising, analytics, or any purpose other than our own anti-abuse enforcement.
+
+If you never use a promo code, no entry is ever created.
+
 ### Data Retention
 
 - **Local Data:** Your exercise data, preferences, and statistics remain on your device until you delete the app or clear app data.
@@ -106,6 +119,26 @@ FitToll requires certain device permissions to function:
 | **Background Service** (Android) | To monitor blocked app launches in the background | Continuously while blocking is enabled |
 
 You can revoke any permission at any time through your device settings. Revoking the camera permission will prevent exercise verification. Revoking Screen Time / Usage Access will disable the app blocking feature.
+
+## Android Accessibility Service
+
+On Android, FitToll uses the Android Accessibility Service to detect when you open a blocked app so that the blocking screen can appear in real time. This is the only mechanism Android provides for third-party apps to observe which app is currently in the foreground for blocking purposes.
+
+**What we use it for:**
+
+- Detecting the foreground package name the moment a blocked app comes to the front, so FitToll can present the exercise gate before you start scrolling.
+
+**What we explicitly do NOT do:**
+
+- We do NOT read the content of your screen.
+- We do NOT extract text from the apps you use.
+- We do NOT record keystrokes, taps, or any user input.
+- We do NOT transmit any accessibility data off your device — not to our own servers, not to analytics providers, not to anyone.
+- We do NOT use accessibility data for profiling, advertising, or any secondary purpose.
+
+All accessibility observation runs entirely on your device. The only signal FitToll acts on is the foreground package name, and only to decide whether a blocking screen should be shown.
+
+You can revoke this permission at any time from your device at **Settings → Accessibility → FitToll**. Revoking it will disable the Android app-blocking feature.
 
 ## International Data Transfers
 
@@ -156,4 +189,4 @@ If you have any questions, concerns, or requests regarding this Privacy Policy o
 
 ---
 
-*This privacy policy is effective as of April 17, 2026.*
+*This privacy policy is effective as of April 24, 2026.*
