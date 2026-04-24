@@ -3,3 +3,16 @@ description: Pay the toll to scroll
 url: https://fittoll.com
 theme: minima
 permalink: pretty
+
+# G-17 [SITE-M-01]: keep internal docs off the public site.
+# correspondence/ contains vendor/partner followups (e.g. Apple
+# FamilyControls entitlement thread) that must not be indexed.
+# README/Gemfile/etc. are build-time only.
+exclude:
+  - correspondence/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .sass-cache/
