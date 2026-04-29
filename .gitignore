@@ -2,3 +2,19 @@ correspondence/
 
 # macOS
 .DS_Store
+
+# Secrets — defensive belt-and-suspenders. This is a PUBLIC Jekyll repo.
+# Never drop credentials here. These globs catch accidents.
+.env
+.env.*
+*.p8
+*service-account*.json
+*-credentials.json
+*.keystore
+
+# Jekyll build artifacts
+_site/
+.bundle/
+vendor/bundle/
+.jekyll-cache/
+.jekyll-metadata
