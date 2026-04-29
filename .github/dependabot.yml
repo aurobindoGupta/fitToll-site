@@ -1,0 +1,28 @@
+version: 2
+updates:
+  # Jekyll site — Ruby gems (jekyll, github-pages plugin chain)
+  # Monthly cadence: site is 3 markdown files; deps barely move.
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      day: "monday"
+    open-pull-requests-limit: 3
+    labels:
+      - "dependencies"
+      - "bundler"
+    commit-message:
+      prefix: "chore(deps)"
+
+  # GitHub Actions workflow versions (forward-compat for v2.0 if we add CI)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      day: "monday"
+    open-pull-requests-limit: 3
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "chore(deps)"
