@@ -36,7 +36,7 @@ FitToll is developed and maintained by Aurobindo Gupta ("we", "us", "our"). If y
 
 - **Health Data:** While FitToll involves physical exercise, we do not integrate with Apple Health, Google Fit, or any health data platform.
 
-- **Analytics or Tracking:** We do not use third-party behavioral analytics SDKs (such as Google Analytics, Firebase Analytics, Mixpanel, or Amplitude), advertising SDKs, or cross-app tracking tools. RevenueCat (used for subscription billing) collects standard device metadata necessary for entitlement management — see the Third-Party Services section below for the full disclosure.
+- **Analytics or Tracking:** We do not use third-party behavioral analytics SDKs (such as Google Analytics, Mixpanel, or Amplitude), advertising SDKs, or cross-app tracking tools. Firebase Analytics is included on Android only as a transitive dependency of Firebase Crashlytics (for crash breadcrumbs); we do not collect or consume any behavioral analytics data. RevenueCat (used for subscription billing) collects standard device metadata necessary for entitlement management — see the Third-Party Services section below for the full disclosure. We use Firebase Crashlytics for crash diagnostics — see the Crashlytics section below.
 
 ## How We Use Your Data
 
@@ -59,7 +59,23 @@ The majority of your data is stored locally on your device using platform-native
 
 ### Firebase Authentication
 
-Your authentication credentials (email, authentication tokens) are managed by Firebase Authentication, a Google service. Firebase Authentication data is governed by [Google's Privacy Policy](https://policies.google.com/privacy). We use Firebase Authentication for login and Firebase Cloud Functions for promo code validation. No other Firebase services (Analytics, Crashlytics, etc.) are used.
+Your authentication credentials (email, authentication tokens) are managed by Firebase Authentication, a Google service. Firebase Authentication data is governed by [Google's Privacy Policy](https://policies.google.com/privacy). We use Firebase Authentication for login, Firebase Cloud Functions for promo code validation and trial entitlement, and Firebase Crashlytics for crash diagnostics (see the Crashlytics section below for full disclosure).
+
+### Firebase Crashlytics
+
+We use **Firebase Crashlytics** (a crash-reporting service from Google) to detect and diagnose app crashes. Crashlytics collects:
+
+- Crash stack traces (no personal data; no biometric data; no exercise content)
+- Device model and OS version
+- App version and build number
+- A randomly-generated installation UUID (linked to the install, not to your identity)
+- IP address (used by Google during data transit; not stored long-term)
+
+Crashlytics data is treated as **Linked-to-User** per Google's privacy manifest. We use it solely for app-functionality (fixing crashes) and never for tracking or advertising.
+
+You can opt out of crash reporting in **Settings → Privacy → Crash Reporting** (toggle off to disable). Your preference is persisted on your device and applies on next app launch.
+
+We also use the operating system's native crash diagnostic APIs — **Apple MetricKit** on iOS and **Android ApplicationExitInfo** on Android — to capture crashes that Crashlytics may miss; these forward into the same Crashlytics dashboard. No additional data is collected beyond what Crashlytics already collects.
 
 ### Promotional Code Validation
 
@@ -92,7 +108,8 @@ FitToll uses the following third-party services:
 | Service | Purpose | Data Shared |
 |---------|---------|-------------|
 | Firebase Authentication | User login and account management | Email address, authentication tokens |
-| Firebase Cloud Functions | Promo code validation | Promo code text, authentication token |
+| Firebase Cloud Functions | Promo code validation, trial entitlement | Promo code text, authentication token, App Check token |
+| Firebase Crashlytics | Crash diagnostics | Stack traces, device model, OS version, app version, installation UUID, IP address (transit only) |
 | [RevenueCat](https://www.revenuecat.com/privacy/) | Subscription management and billing | Firebase UID, purchase transactions, device metadata |
 | Sign in with Google | Optional login method | Authentication credentials (handled by Google) |
 | Sign in with Apple | Optional login method | Authentication credentials (handled by Apple) |
