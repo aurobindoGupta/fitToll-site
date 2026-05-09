@@ -16,7 +16,10 @@
 
   function buildToc() {
     if (!docArticle || !tocNav) return null;
-    var headings = docArticle.querySelectorAll('.doc-body h2, .doc-body h3');
+    // Only top-level (H2) sections in the TOC. H3 subsections are
+    // visible in the body but not in the sidebar -- matches Shopify's
+    // legal-page pattern, keeps the rail digestible on long policies.
+    var headings = docArticle.querySelectorAll('.doc-body h2');
     if (!headings.length) {
       var sidebar = document.querySelector('.doc-toc');
       if (sidebar) sidebar.style.display = 'none';
