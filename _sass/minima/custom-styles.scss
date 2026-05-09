@@ -24,3 +24,75 @@
   font-weight: 600;
   letter-spacing: -0.01em;
 }
+
+// --- Brand palette --------------------------------------------------
+// $brand-cyan picked from the panda's eye-glow; ~10:1 contrast on the
+// warmed surface below, well above WCAG AAA for normal text.
+$brand-cyan:        #22d3ee;
+$brand-cyan-hover:  #67e8f9;
+$surface-warm:      #1a1a1a;  // minima dark default is #171717 -- a touch
+                              // warmer reads less "console grey" without
+                              // sacrificing contrast.
+$text-strong:       #f5f5f5;
+$text-muted:        #a3a3a3;
+
+body {
+  background-color: $surface-warm;
+  color: #d4d4d4;
+}
+
+// --- Links: cyan, with a softer-cyan hover -------------------------
+a {
+  color: $brand-cyan;
+
+  &:visited { color: $brand-cyan; }
+  &:hover {
+    color: $brand-cyan-hover;
+    text-decoration-thickness: 1.5px;
+  }
+}
+
+// --- Header chrome -------------------------------------------------
+.site-header {
+  border-top: none;
+  border-bottom: 1px solid #262626;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.site-title,
+.site-title:visited {
+  color: $text-strong;
+
+  &:hover {
+    color: $brand-cyan;
+    text-decoration: none;
+  }
+}
+
+.site-nav .page-link {
+  color: $text-muted;
+
+  &:hover {
+    color: $brand-cyan;
+    text-decoration: none;
+  }
+}
+
+// --- Headings: bright top, cyan rule under h1 ----------------------
+h1, h2, h3, h4, h5, h6 {
+  color: $text-strong;
+  line-height: 1.25;
+}
+
+.post-title,
+.post-content h1 {
+  border-bottom: 2px solid $brand-cyan;
+  padding-bottom: 0.35em;
+  margin-bottom: 0.6em;
+}
+
+// --- Footer: dim, single-rule top border --------------------------
+.site-footer {
+  border-top: 1px solid #262626;
+  color: $text-muted;
+}
