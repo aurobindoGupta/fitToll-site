@@ -1,0 +1,26 @@
+// FitToll brand polish, layered over minima's dark skin.
+// Imported by minima's main stylesheet via the custom-styles hook
+// (last @import in _sass/minima/initialize.scss), so these rules
+// always win the cascade.
+
+// --- Header: logo + wordmark side-by-side --------------------------
+.site-title,
+.site-title:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  line-height: 1;
+}
+
+.site-logo {
+  display: block;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  border-radius: 8px;
+}
+
+.site-wordmark {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
