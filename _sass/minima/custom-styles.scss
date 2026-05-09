@@ -78,6 +78,21 @@ img { max-width: 100%; display: block; }
 
 ::selection { background: var(--accent); color: var(--surface-0); }
 
+/* Scrollbars: thin, muted, match dark UI. WebKit (Chrome/Safari) +
+   standard scrollbar-* (Firefox). Transparent border with content-box
+   clip gives an inset thumb that reads as floating on any surface. */
+* { scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.16) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background-color: rgba(255, 255, 255, 0.24); background-clip: padding-box; }
+::-webkit-scrollbar-corner { background: transparent; }
+
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
