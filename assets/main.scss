@@ -1,20 +1,21 @@
 ---
-# Override minima's gem-shipped assets/main.scss.
-#
-# Why: setting `minima.skin: dark` in _config.yml relies on the gem's
-# main.scss doing `@import "minima/skins/{{ site.minima.skin }}"`,
-# which the GH-Pages-pinned minima 2.x version doesn't always do.
-# Same problem for the `minima/custom-styles` hook -- it's a later
-# minima addition. Both silently no-op'd: 2026-05-09 production CSS
-# verified as pure classic-skin with no custom rules.
-#
-# Fix: own the entry-point stylesheet ourselves and import the three
-# pieces explicitly. Jekyll's lookup resolves _sass/minima/* against
-# the gem path, so we still get the upstream skin + initialize files
-# but on our terms.
+# Override minima's gem-shipped assets/main.scss to:
+#   1) define dark-mode colors via SCSS variables that minima reads
+#      with !default (so ours win); minima 2.5.1 ships no skins
+#      directory, so @import "minima/skins/dark" doesn't work.
+#   2) explicitly import our custom-styles file (the in-gem
+#      "custom-styles" hook isn't reliable across 2.x revisions).
 ---
-@import
-  "minima/skins/dark",
-  "minima/initialize",
-  "minima/custom-styles"
-;
+
+// --- Dark palette: variables minima/_base.scss declares with !default
+// Override BEFORE @import "minima" so our values are taken.
+$text-color:       #d4d4d4;
+$background-color: #1a1a1a;
+$brand-color:      #22d3ee;
+
+$grey-color:       #a3a3a3;
+$grey-color-light: #262626;
+$grey-color-dark:  #f5f5f5;
+
+@import "minima";
+@import "minima/custom-styles";
