@@ -21,7 +21,7 @@
   </div>
 </header>
 
-<aside class="drawer" id="drawer" aria-label="Menu" data-drawer hidden>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" data-drawer hidden>
   <div class="drawer-inner">
     <nav class="drawer-nav" aria-label="Site">
       {%- for path in page_paths -%}

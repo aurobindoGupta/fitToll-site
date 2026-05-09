@@ -486,6 +486,52 @@ button { font: inherit; }
 .home-article ul, .home-article ol { padding-left: 22px; margin: 16px 0; list-style: revert; }
 .home-article li { margin: 6px 0; }
 
+.home-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 32px 0 0;
+}
+
+/* ---- Buttons ----------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 18px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  border-radius: var(--r-2);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.btn:hover { text-decoration: none; }
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--surface-0);
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  color: var(--surface-0);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-strong);
+  border-color: var(--border-strong);
+}
+.btn-ghost:hover {
+  background: var(--surface-2);
+  color: var(--text-strong);
+  border-color: var(--text-faint);
+}
+
 /* ---- Drawer (mobile) -------------------------------------------- */
 .drawer {
   position: fixed;
