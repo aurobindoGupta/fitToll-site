@@ -2,6 +2,8 @@ title: FitToll
 description: Pay the toll to scroll
 url: https://fittoll.com
 theme: minima
+minima:
+  skin: dark
 permalink: pretty
 
 # G-17 [SITE-M-01]: keep internal docs off the public site.
