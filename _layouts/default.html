@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+{%- include head.html -%}
+<body>
+  {%- include header.html -%}
+  <main class="page-shell" id="main">
+    {{ content }}
+  </main>
+  {%- include footer.html -%}
+  <div class="drawer-backdrop" data-drawer-backdrop hidden></div>
+  <script src="{{ '/assets/scripts/toc.js' | relative_url }}" defer></script>
+</body>
+</html>

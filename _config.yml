@@ -2,14 +2,20 @@ title: FitToll
 description: Pay the toll to scroll
 url: https://fittoll.com
 theme: minima
-minima:
-  skin: dark
 permalink: pretty
 
+# Header nav: brand mark in header doubles as Home, so nav lists only legal.
+header_pages:
+  - privacy-policy.md
+  - terms-of-use.md
+
+# jekyll-titles-from-headings is auto-enabled by GH Pages. Tell it to leave
+# in-body H1s alone -- our front-matter sets page.title explicitly, and CSS
+# hides the duplicate H1 inside .post-content.
+titles_from_headings:
+  strip_title: false
+
 # G-17 [SITE-M-01]: keep internal docs off the public site.
-# correspondence/ contains vendor/partner followups (e.g. Apple
-# FamilyControls entitlement thread) that must not be indexed.
-# README/Gemfile/etc. are build-time only.
 exclude:
   - correspondence/
   - README.md

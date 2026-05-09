@@ -1,0 +1,13 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <p class="site-footer-line">
+      &copy; {{ 'now' | date: '%Y' }} FitToll
+      <span aria-hidden="true">·</span>
+      <span class="site-footer-tag">{{ site.description }}</span>
+    </p>
+    <nav class="site-footer-nav" aria-label="Legal">
+      <a href="{{ '/privacy-policy/' | relative_url }}">Privacy</a>
+      <a href="{{ '/terms-of-use/' | relative_url }}">Terms</a>
+    </nav>
+  </div>
+</footer>

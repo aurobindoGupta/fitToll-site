@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div class="doc">
+  <aside class="doc-toc" id="toc" aria-label="On this page">
+    <p class="doc-toc-label">On this page</p>
+    <nav class="doc-toc-nav" data-toc></nav>
+  </aside>
+
+  <article class="doc-article">
+    <header class="doc-head">
+      {%- if page.eyebrow -%}<p class="doc-eyebrow">{{ page.eyebrow }}</p>{%- endif -%}
+      <h1 class="doc-title">{{ page.title }}</h1>
+      {%- if page.last_updated -%}<p class="doc-meta">Last updated <time>{{ page.last_updated }}</time></p>{%- endif -%}
+    </header>
+    <div class="doc-body post-content">
+      {{ content }}
+    </div>
+  </article>
+</div>

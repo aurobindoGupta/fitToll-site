@@ -1,6 +1,9 @@
-# FitToll - Terms of Use
-
-**Last Updated:** April 17, 2026
+---
+layout: page
+title: Terms of Use
+eyebrow: Legal
+last_updated: April 17, 2026
+---
 
 ## Agreement to Terms
 

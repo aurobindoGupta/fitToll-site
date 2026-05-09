@@ -1,6 +1,9 @@
-# FitToll - Privacy Policy
-
-**Last Updated:** April 24, 2026
+---
+layout: page
+title: Privacy Policy
+eyebrow: Legal
+last_updated: April 24, 2026
+---
 
 ## Introduction
 

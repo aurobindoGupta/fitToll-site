@@ -1,21 +1,7 @@
 ---
-# Override minima's gem-shipped assets/main.scss to:
-#   1) define dark-mode colors via SCSS variables that minima reads
-#      with !default (so ours win); minima 2.5.1 ships no skins
-#      directory, so @import "minima/skins/dark" doesn't work.
-#   2) explicitly import our custom-styles file (the in-gem
-#      "custom-styles" hook isn't reliable across 2.x revisions).
+# Self-contained stylesheet. We no longer import minima -- the redesign
+# replaces every visible surface (header/footer/layouts/typography), and
+# importing minima would only bring ~5KB of conflicting cascade. Reset
+# rules live in custom-styles.scss alongside the design system.
 ---
-
-// --- Dark palette: variables minima/_base.scss declares with !default
-// Override BEFORE @import "minima" so our values are taken.
-$text-color:       #d4d4d4;
-$background-color: #1a1a1a;
-$brand-color:      #22d3ee;
-
-$grey-color:       #a3a3a3;
-$grey-color-light: #262626;
-$grey-color-dark:  #f5f5f5;
-
-@import "minima";
 @import "minima/custom-styles";
