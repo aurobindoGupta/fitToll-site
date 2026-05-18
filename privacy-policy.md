@@ -11,7 +11,7 @@ Welcome to FitToll. We built this app to help you break doom-scrolling habits th
 
 ## Who We Are
 
-FitToll is developed and maintained by Aurobindo Gupta ("we", "us", "our"). If you have questions about this policy, you can reach us at aurogpt10@gmail.com.
+FitToll is developed and maintained by Aurobindo Gupta ("we", "us", "our"). If you have questions about this policy, you can reach us at support@fittoll.com.
 
 ## Data We Collect
 
@@ -166,7 +166,7 @@ FitToll is developed in India. Authentication data processed by Firebase and sub
 
 ## Children's Privacy
 
-FitToll is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at aurogpt10@gmail.com and we will take steps to remove that information.
+FitToll is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at support@fittoll.com and we will take steps to remove that information.
 
 For users in the European Economic Area, the applicable minimum age may be up to 16 years depending on your country of residence, in accordance with local implementations of the GDPR.
 
@@ -175,13 +175,13 @@ For users in the European Economic Area, the applicable minimum age may be up to
 You have the following rights regarding your data:
 
 - **Access:** You can view all your data directly within the app (exercise history, preferences, statistics).
-- **Deletion:** You can permanently delete your account directly from within the app: open **Settings** (profile icon on Home), scroll to the bottom, and tap **Delete Account**. This irreversibly deletes your Firebase authentication record. Local app data (blocking config, exercise history, statistics) stays on your device until you uninstall the app or clear app data. If you cannot access the in-app option for any reason, you can also request deletion by emailing aurogpt10@gmail.com.
+- **Deletion:** You can permanently delete your account directly from within the app: open **Settings** (profile icon on Home), scroll to the bottom, and tap **Delete Account**. This irreversibly deletes your Firebase authentication record. Local app data (blocking config, exercise history, statistics) stays on your device until you uninstall the app or clear app data. If you cannot access the in-app option for any reason, you can also request deletion by emailing support@fittoll.com.
 - **Portability:** Since your data is stored locally on your device, you already have direct access to it.
 - **Opt-Out:** You can stop using any feature at any time. Uninstalling the app removes all local data.
 
 ### For EU/EEA Users (GDPR)
 
-If you are located in the European Union or European Economic Area, you have additional rights under the General Data Protection Regulation (GDPR), including the right to access, rectify, erase, restrict processing, and data portability. To exercise these rights, contact us at aurogpt10@gmail.com.
+If you are located in the European Union or European Economic Area, you have additional rights under the General Data Protection Regulation (GDPR), including the right to access, rectify, erase, restrict processing, and data portability. To exercise these rights, contact us at support@fittoll.com.
 
 Our legal bases for processing your data under GDPR Article 6 are:
 - **Contractual necessity** (Art. 6(1)(b)): Account creation, authentication, and core app functionality
@@ -189,7 +189,7 @@ Our legal bases for processing your data under GDPR Article 6 are:
 
 ### For California Users (CCPA)
 
-If you are a California resident, you have the right to know what personal information we collect, request deletion of your data, and opt out of the sale of your data. We do not sell personal data. To exercise your rights, contact us at aurogpt10@gmail.com.
+If you are a California resident, you have the right to know what personal information we collect, request deletion of your data, and opt out of the sale of your data. We do not sell personal data. To exercise your rights, contact us at support@fittoll.com.
 
 ## On-Device Processing Guarantee
 
@@ -205,7 +205,7 @@ For significant changes, we will notify you through the app or via email.
 
 If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:
 
-- **Email:** aurogpt10@gmail.com
+- **Email:** support@fittoll.com
 
 ---
 

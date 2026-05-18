@@ -14,4 +14,4 @@ FitToll is a digital wellness app that fights doom-scrolling by requiring real, 
 
 ## Contact
 
-For questions or support, email **aurogpt10@gmail.com**.
+For questions or support, email **support@fittoll.com**.

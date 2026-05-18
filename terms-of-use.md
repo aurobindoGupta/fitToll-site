@@ -188,7 +188,7 @@ These Terms, together with our Privacy Policy, constitute the entire agreement b
 
 If you have any questions about these Terms, please contact us:
 
-- **Email:** aurogpt10@gmail.com
+- **Email:** support@fittoll.com
 
 ---
 
