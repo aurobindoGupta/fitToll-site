@@ -2,7 +2,7 @@
 layout: page
 title: Privacy Policy
 eyebrow: Legal
-last_updated: April 24, 2026
+last_updated: May 21, 2026
 ---
 
 ## Introduction
@@ -131,7 +131,7 @@ FitToll requires certain device permissions to function:
 | Permission | Why We Need It | When It's Used |
 |------------|---------------|----------------|
 | **Camera** | To verify exercises through pose estimation | Only during active exercise sessions |
-| **Screen Time / Usage Access** | To detect when blocked apps are opened and apply shields | Continuously in the background (iOS: FamilyControls; Android: UsageStats/Accessibility) |
+| **Screen Time / Usage Access** | To detect when blocked apps are opened and apply shields | Continuously in the background (iOS: FamilyControls; Android: UsageStatsManager) |
 | **App Groups (iOS)** | To share blocking preferences between the main app and system extensions | Continuously in the background |
 | **Display Over Other Apps** (Android) | To show the exercise screen when a blocked app is opened | When a blocked app is detected |
 | **App List Access** (Android) | To identify installed apps for blocking selection | When selecting apps to block |
@@ -140,9 +140,9 @@ FitToll requires certain device permissions to function:
 
 You can revoke any permission at any time through your device settings. Revoking the camera permission will prevent exercise verification. Revoking Screen Time / Usage Access will disable the app blocking feature.
 
-## Android Accessibility Service
+## Android Usage Access
 
-On Android, FitToll uses the Android Accessibility Service to detect when you open a blocked app so that the blocking screen can appear in real time. This is the only mechanism Android provides for third-party apps to observe which app is currently in the foreground for blocking purposes.
+On Android, FitToll uses the system **Usage Access** permission (the `UsageStatsManager` API) to detect when you open a blocked app so that the blocking screen can appear. This is the standard Android mechanism for apps that need to observe which app is currently in the foreground for blocking purposes.
 
 **What we use it for:**
 
@@ -153,12 +153,12 @@ On Android, FitToll uses the Android Accessibility Service to detect when you op
 - We do NOT read the content of your screen.
 - We do NOT extract text from the apps you use.
 - We do NOT record keystrokes, taps, or any user input.
-- We do NOT transmit any accessibility data off your device — not to our own servers, not to analytics providers, not to anyone.
-- We do NOT use accessibility data for profiling, advertising, or any secondary purpose.
+- We do NOT transmit foreground-app data off your device — not to our own servers, not to analytics providers, not to anyone.
+- We do NOT use foreground-app data for profiling, advertising, or any secondary purpose.
 
-All accessibility observation runs entirely on your device. The only signal FitToll acts on is the foreground package name, and only to decide whether a blocking screen should be shown.
+All foreground-app observation runs entirely on your device. The only signal FitToll acts on is the foreground package name, and only to decide whether a blocking screen should be shown.
 
-You can revoke this permission at any time from your device at **Settings → Accessibility → FitToll**. Revoking it will disable the Android app-blocking feature.
+You can revoke this permission at any time from your device at **Settings → Apps → Special app access → Usage access → FitToll**. Revoking it will disable the Android app-blocking feature.
 
 ## International Data Transfers
 
@@ -209,4 +209,4 @@ If you have any questions, concerns, or requests regarding this Privacy Policy o
 
 ---
 
-*This privacy policy is effective as of April 24, 2026.*
+*This privacy policy is effective as of May 21, 2026.*
