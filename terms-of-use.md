@@ -2,7 +2,7 @@
 layout: page
 title: Terms of Use
 eyebrow: Legal
-last_updated: April 17, 2026
+last_updated: July 22, 2026
 ---
 
 ## Agreement to Terms
@@ -58,6 +58,14 @@ FitToll uses platform-provided APIs (Apple FamilyControls/Screen Time API on iOS
 
 ### Premium Subscription
 FitToll offers optional premium subscriptions that unlock additional features. Subscriptions are processed through the Apple App Store or Google Play Store.
+
+Premium currently includes:
+
+- **Unlimited blocked apps.** The free tier can block one app at a time.
+- **Longer unlock durations.** The free tier is limited to 15 minutes per unlock.
+- **90 days of exercise history.** The free tier shows the last 7 days.
+
+Exercise sessions are deleted from your device after 90 days on both tiers (see the Privacy Policy), so premium extends how much of that window you can view — it does not extend how long data is kept. We may change which features are included in premium; material changes will be reflected here.
 
 ### Auto-Renewal
 Subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours prior to the end of the current period.

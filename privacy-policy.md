@@ -2,7 +2,7 @@
 layout: page
 title: Privacy Policy
 eyebrow: Legal
-last_updated: May 21, 2026
+last_updated: July 22, 2026
 ---
 
 ## Introduction
@@ -95,7 +95,8 @@ If you never use a promo code, no entry is ever created.
 
 ### Data Retention
 
-- **Local Data:** Your exercise data, preferences, and statistics remain on your device until you delete the app or clear app data.
+- **Exercise History:** Individual exercise sessions are automatically deleted from your device 90 days after they are recorded. This happens on a rolling basis — each session is removed once it passes 90 days old, whether or not you open the app. Nothing is sent anywhere before or after deletion; the data only ever existed on your device.
+- **Other Local Data:** Your preferences, blocking configuration, and settings remain on your device until you delete the app or clear app data.
 - **Account Data:** Your authentication account data is retained as long as your account is active. You can request account deletion at any time (see Your Rights below).
 
 ## Data Sharing
