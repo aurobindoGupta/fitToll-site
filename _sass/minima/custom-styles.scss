@@ -432,11 +432,28 @@ button { font: inherit; }
   font-size: 1em;
 }
 
+/* Legal pages carry 6-column tables. At phone widths one of them rendered
+   391px inside a 375px viewport and pushed the whole document sideways —
+   the parent had overflow-x: visible, so there was nothing to contain it.
+   `display: block` turns the table itself into the scroll container; the
+   rows still lay out through anonymous table boxes, so nothing else about
+   the table changes. min-width keeps the columns from crushing instead of
+   scrolling. */
 .post-content table {
+  display: block;
   width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-collapse: collapse;
   margin: 20px 0;
   font-size: 14.5px;
+}
+.post-content table > * { min-width: 520px; }
+@media (min-width: 700px) {
+  /* Enough room for the real thing — restore normal table layout. */
+  .post-content table { display: table; overflow-x: visible; }
+  .post-content table > * { min-width: 0; }
 }
 .post-content th,
 .post-content td {
