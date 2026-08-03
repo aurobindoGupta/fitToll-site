@@ -1,8 +1,37 @@
 ---
 layout: default
 ---
-<div class="home">
-  <article class="home-article post-content">
+<div class="landing">
+
+  <section class="gate" aria-labelledby="gate-title">
+    <div class="gate-grid" aria-hidden="true"></div>
+    <div class="gate-inner">
+      <div class="gate-copy">
+        <img class="gate-mark" src="{{ '/assets/favicon-512.png' | relative_url }}" alt="FitToll app icon" width="76" height="76" loading="eager" decoding="async">
+        <p class="gate-eyebrow">App blocked</p>
+        <h1 class="gate-title" id="gate-title">Pay the toll<br>to scroll.</h1>
+        <p class="gate-lede">FitToll blocks the apps you doomscroll. To open one, you do push-ups or squats in front of your camera, and it counts them. There is no skip button.</p>
+        <p class="gate-actions">
+          <a class="btn btn-primary" href="https://apps.apple.com/us/app/fittoll/id6761677416">Download on iOS</a>
+          <a class="btn btn-ghost" href="#android">Android testers</a>
+        </p>
+        <p class="gate-note">Free to download. Both exercises included.</p>
+      </div>
+
+      <div class="counter" role="img" aria-label="A rep counter reaching ten of ten, then unlocking">
+        <div class="counter-frame">
+          <p class="counter-label">Push-ups</p>
+          <p class="counter-value"><span data-count>0</span><span class="counter-of">/10</span></p>
+          <div class="counter-bar"><span data-bar></span></div>
+          <p class="counter-state" data-state>Locked</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="landing-body">
     {{ content }}
   </article>
+
 </div>
+<script src="{{ '/assets/scripts/home.js' | relative_url }}" defer></script>

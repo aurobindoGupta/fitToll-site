@@ -666,3 +666,609 @@ body[data-drawer-open="true"] { overflow: hidden; }
     gap: 12px;
   }
 }
+
+/* ==================================================================
+   LANDING — home page only. Namespaced under .landing so it cannot
+   collide with .home / .post-content rules used by the legal pages.
+   Display face: Big Shoulders Display (condensed signage — the
+   vernacular of gym posters and wayfinding). Geist Mono carries the
+   counted data. Amber --toll marks the locked state; cyan --accent
+   stays the brand action colour.
+   ================================================================== */
+
+:root {
+  --font-display: "Big Shoulders Display", "Geist", ui-sans-serif, sans-serif;
+  --toll: #f4a52a;
+  --toll-soft: rgba(244, 165, 42, 0.13);
+  --grid-line: rgba(255, 255, 255, 0.035);
+}
+
+.landing { width: 100%; }
+
+/* ---- Gate (hero) -------------------------------------------------- */
+.gate {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-subtle);
+  background:
+    radial-gradient(120% 90% at 85% 0%, rgba(34, 211, 238, 0.10), transparent 62%),
+    radial-gradient(80% 70% at 5% 100%, var(--toll-soft), transparent 60%),
+    var(--surface-0);
+}
+.gate-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(120% 100% at 50% 0%, #000 35%, transparent 78%);
+  -webkit-mask-image: radial-gradient(120% 100% at 50% 0%, #000 35%, transparent 78%);
+  pointer-events: none;
+}
+.gate-inner {
+  position: relative;
+  /* Same column arithmetic as .strip so the hero and the sections below
+     share one left edge. */
+  padding-block: clamp(64px, 11vw, 132px) clamp(56px, 9vw, 104px);
+  padding-inline: max(var(--gutter-x), calc((100% - 1080px) / 2));
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+}
+
+.gate-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--toll);
+  margin: 0 0 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.gate-eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--toll);
+  box-shadow: 0 0 0 4px var(--toll-soft);
+}
+
+.gate-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(58px, 12vw, 132px);
+  line-height: 0.86;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: var(--text-strong);
+  margin: 0 0 26px;
+  text-wrap: balance;
+}
+
+.gate-lede {
+  font-size: clamp(17px, 2.1vw, 20px);
+  line-height: 1.6;
+  color: var(--text-default);
+  margin: 0 0 32px;
+  max-width: 48ch;
+}
+
+.gate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 16px;
+}
+/* Equal widths side by side, not just when stacked — two CTAs at their
+   natural label widths read as accidental. Capped so they don't stretch
+   across the full hero column.
+   NOTE: `flex: 1 1 0` equalises the MAIN axis. That is width only while the
+   container is a row; when it flips to column on phones the same declaration
+   would collapse the buttons' height instead, so the phone rule below resets
+   it to `flex: 0 0 auto`. */
+.gate-actions .btn {
+  height: 46px;
+  padding: 0 24px;
+  font-size: 15px;
+  flex: 1 1 0;
+  max-width: 220px;
+}
+
+.gate-note {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+/* ---- Rep counter -------------------------------------------------- */
+.counter { display: flex; justify-content: center; }
+.counter-frame {
+  width: 100%;
+  max-width: 300px;
+  background: linear-gradient(180deg, var(--surface-2), var(--surface-1));
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-3);
+  padding: 26px 26px 22px;
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.85);
+}
+.counter-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+.counter-value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(52px, 8vw, 68px);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-strong);
+  margin: 0 0 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.counter-of { font-size: 0.42em; color: var(--text-faint); }
+
+.counter-bar {
+  height: 5px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+.counter-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: var(--toll);
+  transition: width 260ms var(--ease), background 320ms var(--ease);
+}
+.counter-frame.is-done .counter-bar span { background: var(--accent); }
+
+.counter-state {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--toll);
+  margin: 14px 0 0;
+  transition: color 320ms var(--ease);
+}
+.counter-frame.is-done .counter-state { color: var(--accent); }
+
+/* ---- Content strips ----------------------------------------------- */
+.landing-body { width: 100%; }
+
+/* The content column lives in the padding, not in per-child margins.
+   Centring each child instead would be undone by the `margin` shorthands
+   on h2/p below — and would centre the 62ch paragraphs away from the
+   column's left edge. */
+.strip {
+  padding-block: clamp(56px, 8vw, 96px);
+  padding-inline: max(var(--gutter-x), calc((100% - 1080px) / 2));
+  border-bottom: 1px solid var(--border-subtle);
+}
+.strip-alt { background: var(--surface-1); }
+.strip:last-child { border-bottom: none; }
+
+.strip h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 4.6vw, 46px);
+  line-height: 1.02;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--text-strong);
+  margin: 0 0 28px;
+}
+.strip > p {
+  font-size: 17.5px;
+  line-height: 1.65;
+  color: var(--text-default);
+  margin: 0 0 16px;
+  max-width: 62ch;
+}
+.strip > p:last-child { margin-bottom: 0; }
+.strip strong { color: var(--text-strong); font-weight: 600; }
+
+/* Specificity, not !important: `.strip > p` is 0,1,1 and would otherwise win.
+   Matching that shape keeps the override honest and overridable later. */
+.strip > p.strip-foot {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-top: 28px;
+}
+
+/* ---- Steps (numbered because the gate IS a sequence) --------------- */
+.steps {
+  display: grid;
+  /* Exactly four steps, so the column count is declared per breakpoint.
+     auto-fit cannot express this: any minmax value that gives 4-across on
+     desktop resolves to 3 somewhere in the tablet range and orphans the
+     fourth card (240px did exactly that at 1024px). */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-3);
+  overflow: hidden;
+  counter-reset: step;
+}
+.step {
+  background: var(--surface-0);
+  padding: 26px 24px 28px;
+  counter-increment: step;
+}
+.strip-alt .step { background: var(--surface-1); }
+.step::before {
+  content: counter(step, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--toll);
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+}
+.step h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+  color: var(--text-strong);
+  margin: 0 0 8px;
+}
+.step p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---- Facts (not a sequence — no numbering) ------------------------- */
+/* Exactly four facts, so the grid is declared rather than auto-fit.
+   auto-fit resolved to three columns at desktop and stranded the fourth. */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 34px);
+  margin-top: 30px;
+}
+.fact { border-top: 2px solid var(--accent); padding-top: 18px; }
+.fact h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-strong);
+  margin: 0 0 8px;
+  letter-spacing: -0.005em;
+}
+.fact p {
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---- Platforms ----------------------------------------------------- */
+/* Exactly two platforms. auto-fit gave three columns at desktop, leaving
+   an empty third cell and needlessly narrow cards. */
+.platforms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.6vw, 26px);
+}
+.platform {
+  background: var(--surface-0);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-3);
+  padding: 26px 26px 28px;
+  display: flex;
+  flex-direction: column;
+}
+.strip-alt .platform { background: var(--surface-1); }
+.platform-live { border-color: rgba(34, 211, 238, 0.28); }
+.platform-testing { border-color: rgba(244, 165, 42, 0.26); }
+
+.platform-status {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.platform-status::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.platform-status-wait { color: var(--toll); }
+
+.platform h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: var(--text-strong);
+  margin: 0 0 10px;
+}
+.platform p {
+  font-size: 15.5px;
+  line-height: 1.62;
+  color: var(--text-default);
+  margin: 0 0 16px;
+}
+.platform > p.platform-cta { margin: 6px 0 14px; }
+.platform > p.platform-note {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: auto 0 0;
+  padding-top: 4px;
+}
+.platform-note code {
+  font-family: var(--font-mono);
+  background: var(--toll-soft);
+  color: var(--toll);
+  padding: 2px 7px;
+  border-radius: var(--r-1);
+  font-size: 0.94em;
+}
+
+/* ---- Contact ------------------------------------------------------- */
+.strip > p.contact-line { margin: 26px 0 0; }
+.contact-mail {
+  font-family: var(--font-mono);
+  font-size: clamp(19px, 3vw, 26px);
+  color: var(--accent);
+  border-bottom: 1px solid rgba(34, 211, 238, 0.3);
+  padding-bottom: 3px;
+}
+.contact-mail:hover { color: var(--accent-hover); text-decoration: none; border-bottom-color: var(--accent-hover); }
+
+/* ---- Entrance ------------------------------------------------------ */
+.gate-copy > * { animation: rise 620ms var(--ease) both; }
+.gate-copy > *:nth-child(1) { animation-delay: 40ms; }
+.gate-copy > *:nth-child(2) { animation-delay: 110ms; }
+.gate-copy > *:nth-child(3) { animation-delay: 190ms; }
+.gate-copy > *:nth-child(4) { animation-delay: 265ms; }
+.gate-copy > *:nth-child(5) { animation-delay: 330ms; }
+.counter-frame { animation: rise 700ms var(--ease) both; animation-delay: 240ms; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gate-copy > *, .counter-frame { animation: none; }
+  .counter-bar span { transition: none; }
+}
+
+/* ---- Responsive ---------------------------------------------------- */
+
+/* Below the 1080px content column there is not room for four steps
+   across without cramping them, so they pair off into 2x2. */
+@media (max-width: 1099px) {
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Tablet / narrow desktop: hero collapses to one column, counter sits
+   under the copy at its natural size rather than centred in dead space. */
+@media (max-width: 820px) {
+  .gate-inner { grid-template-columns: 1fr; gap: 40px; }
+  .counter { justify-content: flex-start; }
+  .counter-frame { max-width: 280px; }
+}
+
+/* Phone: every call to action becomes a full-width target, so stacked
+   buttons share one width instead of ragging to their label lengths.
+   The counter widens to the column for the same reason — a 280px card
+   on a 360px screen reads as a leftover, not a decision. */
+@media (max-width: 620px) {
+  .gate-inner { padding-block: 56px 64px; gap: 32px; }
+  .gate-title { font-size: clamp(46px, 15vw, 72px); margin-bottom: 20px; }
+  .gate-lede { font-size: 16.5px; margin-bottom: 28px; }
+
+  .gate-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .gate-actions .btn {
+    flex: 0 0 auto;   /* main axis is vertical here — see note above */
+    width: 100%;
+    max-width: none;
+    height: 46px;     /* matches the coarse-pointer rule so a narrow desktop
+                         window and a phone agree */
+  }
+
+  .counter-frame { max-width: none; width: 100%; padding: 22px 22px 20px; }
+  .counter-value { font-size: 56px; margin-bottom: 16px; }
+
+  .strip { padding-block: 52px; }
+  .strip h2 { font-size: clamp(28px, 8vw, 36px); margin-bottom: 22px; }
+  .strip > p { font-size: 16.5px; }
+
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .platforms { grid-template-columns: minmax(0, 1fr); }
+  .step { padding: 22px 20px 24px; }
+  .platform { padding: 22px 22px 24px; }
+  .platform-cta .btn { width: 100%; }
+  .platform h3 { font-size: 28px; }
+
+  .contact-mail { font-size: 19px; word-break: break-all; }
+}
+
+/* Very small phones: the grid texture at 64px reads as noise once the
+   viewport is narrower than a few cells. */
+@media (max-width: 380px) {
+  .gate-grid { background-size: 48px 48px; }
+  .gate-actions .btn { font-size: 14.5px; }
+}
+
+/* Touch targets. Keyed on pointer type, not viewport width — an iPad at
+   768px is a finger, and 40px falls under both Apple's and Google's
+   minimum. Desktop keeps the tighter 40px button. */
+@media (pointer: coarse) {
+  .landing .btn { height: 46px; }
+}
+
+/* ---- App icon ------------------------------------------------------
+   favicon-512.png is RGB with no alpha, so it cannot sit bare on the dark
+   ground — a white box would show. Clipping it into a rounded tile is the
+   honest treatment: it IS an app icon, and this is how the stores present
+   it. The ring keeps the white edge from cutting hard against the surface. */
+.gate-mark,
+.site-footer-mark {
+  border-radius: 22%;
+  overflow: hidden;
+  object-fit: cover;
+}
+.gate-mark {
+  box-shadow:
+    0 0 0 1px var(--border-strong),
+    0 10px 26px -10px rgba(0, 0, 0, 0.9);
+}
+
+.gate-mark {
+  width: 76px;
+  height: 76px;
+  margin: 0 0 24px;
+}
+
+.site-footer-mark {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: -6px;
+  margin-right: 8px;
+  box-shadow: 0 0 0 1px var(--border-subtle);
+}
+
+/* The hero stagger is indexed by position; the icon is now the first child,
+   so every following delay shifts by one slot. */
+.gate-copy > *:nth-child(6) { animation-delay: 390ms; }
+
+@media (max-width: 620px) {
+  .gate-mark { width: 60px; height: 60px; margin-bottom: 18px; }
+}
+
+/* ---- Footer tagline: rolling hover wave ----------------------------
+   Letters lift and scale in sequence, each delayed by its index, so the
+   effect reads as a wave travelling left-to-right rather than everything
+   firing at once. The glow is three stacked accent shadows at widening
+   radius and falling opacity — that layering is what gives it a gradient
+   falloff instead of a hard halo. Split into spans by footer-tag.js. */
+.site-footer-tag {
+  display: inline-block;
+  position: relative;   /* positioning context for the cast shadow */
+  white-space: nowrap;
+}
+
+.tag-letter {
+  display: inline-block;
+  will-change: transform;
+  transition:
+    transform 260ms var(--ease),
+    color 260ms var(--ease),
+    text-shadow 260ms var(--ease);
+  transition-delay: calc(var(--i, 0) * 26ms);
+}
+
+/* Letters only lift and scale. No text-shadow — a per-glyph glow reads as
+   the tagline being highlighted. The accent lives entirely in the single
+   tapered shadow cast beneath the whole phrase (see ::after below). */
+.site-footer-tag:hover .tag-letter,
+.site-footer-tag:focus-visible .tag-letter {
+  transform: translateY(-4px) scale(1.22);
+}
+
+/* The cast shadow, built as two stacked gradients rather than a blur:
+
+     1. a crisp 1px line across the top — this is the hard edge; a blur
+        filter would soften it into the mush we had before.
+     2. beneath it, a vertical gradient that fades DOWNWARD only, so the
+        shadow falls away from the line instead of haloing both sides.
+
+   The horizontal mask tapers both ends to nothing, giving the lens shape.
+   transform-origin is LEFT so the line draws out from under the "P" and
+   travels to the final "l", arriving with the letter wave instead of
+   opening from the centre. */
+.site-footer-tag::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 9px;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to right,
+      rgba(34, 211, 238, 0) 0%,
+      rgba(34, 211, 238, 0.95) 12%,
+      rgba(34, 211, 238, 0.95) 88%,
+      rgba(34, 211, 238, 0) 100%
+    ) top left / 100% 1px no-repeat,
+    linear-gradient(
+      to bottom,
+      rgba(34, 211, 238, 0.34) 0%,
+      rgba(34, 211, 238, 0.14) 40%,
+      rgba(34, 211, 238, 0) 100%
+    ) top left / 100% 100% no-repeat;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  /* Timed to the letter wave, and LINEAR on purpose. The letters advance at
+     a constant 26ms per index, so the wave front moves at constant speed;
+     an eased line covers most of its distance in the first half and reads as
+     racing ahead. Duration derives from the phrase: 22 characters x 26ms =
+     572ms for the front to reach the last letter, plus roughly half of that
+     letter's own 260ms move before it visually lands. */
+  transition:
+    transform 660ms linear,
+    opacity 180ms var(--ease);
+}
+.site-footer-tag:hover::after,
+.site-footer-tag:focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Spaces keep the rhythm of the wave but must not scale — a scaled space
+   widens the line and makes the whole tagline jitter. */
+.site-footer-tag:hover .tag-letter.is-space,
+.site-footer-tag:focus-visible .tag-letter.is-space {
+  transform: none;
+  text-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tag-letter { transition: none; transition-delay: 0ms; }
+  .site-footer-tag:hover .tag-letter { transform: none; }
+  .site-footer-tag::after { transition: opacity 140ms linear; }
+  .site-footer-tag:hover::after { transform: translateX(-50%) scaleX(1); }
+}
+
+/* Touch devices have no hover state; the wave would either never fire or
+   stick after a tap. Leave the tagline static there. */
+@media (hover: none) {
+  .site-footer-tag:hover .tag-letter { transform: none; }
+  .site-footer-tag::after { display: none; }
+}
