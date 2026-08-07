@@ -4,6 +4,8 @@
       <img class="site-footer-mark" src="{{ '/assets/favicon-192.png' | relative_url }}" alt="" width="22" height="22" loading="lazy" decoding="async">
       &copy; {{ 'now' | date: '%Y' }} FitToll
       <span aria-hidden="true">·</span>
+      <span class="site-footer-url">{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}</span>
+      <span aria-hidden="true">·</span>
       <span class="site-footer-tag">{{ site.description }}</span>
     </p>
     <nav class="site-footer-nav" aria-label="Legal">

@@ -645,6 +645,10 @@ body[data-drawer-open="true"] { overflow: hidden; }
   font-size: 13px;
   margin: 0;
 }
+.site-footer-url {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
 .site-footer-tag { color: var(--text-muted); }
 .site-footer-nav {
   display: flex;
