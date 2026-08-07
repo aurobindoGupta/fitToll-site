@@ -664,9 +664,14 @@ body[data-drawer-open="true"] { overflow: hidden; }
 }
 
 @media (max-width: 600px) {
+  /* Centred on narrow screens. The footer line no longer fits on one row once
+     the domain is in it, and a two-row ragged-left block reads as a mistake.
+     text-align is needed as well as align-items: the flex rule centres the <p>
+     box, not the wrapped line inside it. */
   .site-footer-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 12px;
   }
 }
