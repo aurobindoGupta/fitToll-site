@@ -18,3 +18,7 @@ _site/
 vendor/bundle/
 .jekyll-cache/
 .jekyll-metadata
+
+# Resolved server-side by Pages. A lock generated on an older Ruby pins below
+# production, so it is not tracked — see the note in Gemfile.
+Gemfile.lock

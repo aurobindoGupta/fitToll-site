@@ -50,9 +50,14 @@ GitHub Pages builds this repo with its built-in Jekyll pipeline — there is no 
 
 ### Local preview
 
-No `Gemfile` is committed, so there is nothing to `bundle install` as things stand. To preview locally, add one pinning the `github-pages` gem — which tracks the exact versions Pages builds with — then run `bundle exec jekyll serve`.
+```bash
+bundle install
+bundle exec jekyll serve      # http://localhost:4000
+```
 
-Because the site is three content pages, most changes are just as easy to verify on the deployed preview after a push.
+The `Gemfile` pins the same `github-pages` release GitHub Pages builds with, so a local preview matches production. **Ruby 3.0 or newer is required** — that release pulls in `nokogiri`, which no longer supports the Ruby 2.6 that ships with macOS. Install a current Ruby via rbenv, asdf, or Homebrew first.
+
+`Gemfile.lock` is intentionally not tracked: Pages resolves dependencies server-side, and a lock generated on an older Ruby silently pins *below* production.
 
 ### Adding a page
 
