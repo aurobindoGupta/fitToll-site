@@ -1,6 +1,7 @@
 ---
 layout: home
 title: FitToll
+seo_title: "FitToll — Pay the Toll to Scroll | Exercise App Blocker"
 ---
 
 <section class="strip" markdown="1">

@@ -1,5 +1,14 @@
 title: FitToll
-description: Pay the toll to scroll
+
+# tagline is the visible footer text. description is the meta description and
+# is never rendered on screen -- they were the same key until this split, which
+# is why every page shipped a 22-character meta description.
+tagline: Pay the toll to scroll
+description: >-
+  FitToll blocks the apps you doomscroll. To open one, do camera-verified
+  push-ups or squats — real pose detection, no skip button, nothing leaves
+  your phone.
+
 url: https://fittoll.com
 theme: minima
 permalink: pretty

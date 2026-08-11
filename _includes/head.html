@@ -4,7 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c0c0d">
 
-  {%- seo -%}
+  {%- comment -%}
+    title=false so each page can set its own via seo_title. seo-tag's own
+    format is "<page.title> | <site.title>", which cannot carry keywords.
+  {%- endcomment -%}
+  {%- seo title=false -%}
+  <title>{{ page.seo_title | default: site.title }}</title>
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- feed_meta -%}
 

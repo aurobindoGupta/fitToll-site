@@ -1,6 +1,11 @@
 ---
 layout: page
 title: Terms of Use
+seo_title: "Terms of Use | FitToll"
+description: >-
+  The terms covering your use of FitToll: the free tier, Premium
+  subscriptions, acceptable use, and how camera-verified exercise unlocking
+  works.
 eyebrow: Legal
 last_updated: July 22, 2026
 ---

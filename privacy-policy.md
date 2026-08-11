@@ -1,6 +1,11 @@
 ---
 layout: page
 title: Privacy Policy
+seo_title: "Privacy Policy | FitToll"
+description: >-
+  How FitToll handles your data. Pose detection runs on your device — no
+  video is recorded, nothing is uploaded, and camera frames never leave
+  your phone.
 eyebrow: Legal
 last_updated: July 22, 2026
 ---
