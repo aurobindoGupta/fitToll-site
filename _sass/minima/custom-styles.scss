@@ -725,26 +725,46 @@ body[data-drawer-open="true"] { overflow: hidden; }
   --font-display: "Big Shoulders Display", "Geist", ui-sans-serif, sans-serif;
   --toll: #f4a52a;
   --toll-soft: rgba(244, 165, 42, 0.13);
-  /* Was 0.035 when the grid only sat behind the hero. Now that it runs behind
-     every page at every scroll position, 0.035 reads as ruled lines under body
-     copy on the long legal pages -- 0.020 keeps it as texture. */
+  /* Two strengths on purpose. The page-wide field runs behind body copy at
+     every scroll position, where 0.035 reads as ruled lines under text. The
+     hero has no body copy over it, so it keeps the original 0.035 it has
+     always had. */
   --grid-line: rgba(255, 255, 255, 0.020);
+  --grid-line-hero: rgba(255, 255, 255, 0.035);
 }
 
 .landing { width: 100%; }
 
 /* ---- Gate (hero) -------------------------------------------------- */
-/* The hero no longer paints its own grid or an opaque base -- the page-wide
-   field behind body::before shows through, so the grid runs unbroken from the
-   hero into the sections below instead of stopping at the section border.
-   Only the colour washes stay, which is what made the hero feel distinct. */
+/* The hero keeps the grid it had before the page-wide field existed: its own
+   layer, at the original --grid-line-hero strength and original mask. The
+   page-wide field is deliberately fainter because it runs behind body copy on
+   long pages; the hero has no body copy over it and reads better strong.
+
+   The opaque var(--surface-0) base is load-bearing, not decoration -- it stops
+   the 0.020 field showing through and double-drawing every line at a slight
+   offset in strength. */
 .gate {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--border-subtle);
   background:
     radial-gradient(120% 90% at 85% 0%, rgba(34, 211, 238, 0.10), transparent 62%),
-    radial-gradient(80% 70% at 5% 100%, var(--toll-soft), transparent 60%);
+    radial-gradient(80% 70% at 5% 100%, var(--toll-soft), transparent 60%),
+    var(--surface-0);
+}
+
+.gate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--grid-line-hero) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-hero) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(120% 100% at 50% 0%, #000 35%, transparent 78%);
+  -webkit-mask-image: radial-gradient(120% 100% at 50% 0%, #000 35%, transparent 78%);
 }
 .gate-inner {
   position: relative;
@@ -1159,7 +1179,8 @@ body[data-drawer-open="true"] { overflow: hidden; }
 /* Very small phones: the grid texture at 64px reads as noise once the
    viewport is narrower than a few cells. */
 @media (max-width: 380px) {
-  body::before { background-size: 48px 48px; }
+  body::before,
+  .gate::before { background-size: 48px 48px; }
   .gate-actions .btn { font-size: 14.5px; }
 }
 
