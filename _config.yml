@@ -32,10 +32,30 @@ header_pages:
 titles_from_headings:
   strip_title: false
 
+# Social share card. Set via front-matter defaults rather than a top-level
+# `image:` key -- defaults is the mechanism jekyll-seo-tag documents, and it
+# applies the card to every page including 404.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: /assets/og-card.png
+        width: 1200
+        height: 630
+        alt: >-
+          FitToll — pay the toll to scroll. Camera-verified push-ups or squats
+          to open the apps you doomscroll.
+
+twitter:
+  card: summary_large_image
+
 # G-17 [SITE-M-01]: keep internal docs off the public site.
 exclude:
   - correspondence/
   - README.md
+  - scripts/
+  - .fonts/
   - Gemfile
   - Gemfile.lock
   - node_modules/

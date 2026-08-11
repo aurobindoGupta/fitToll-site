@@ -12,6 +12,10 @@ correspondence/
 *-credentials.json
 *.keystore
 
+# Fonts fetched on demand by scripts/make-og-card.py. Google-hosted OFL files,
+# no reason to vendor them.
+.fonts/
+
 # Jekyll build artifacts
 _site/
 .bundle/
