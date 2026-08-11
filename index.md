@@ -86,7 +86,7 @@ Live on the App Store.
 
 <div class="platform platform-testing" id="android" markdown="1">
 <p class="platform-status platform-status-wait">Closed testing</p>
-### Android
+### Android {#android-heading}
 The app is built and working. Google's production access needs at least 12 testers actively using it for 14 continuous days before they'll review it again, so it's in closed testing until that clears.
 
 <p class="platform-cta"><a class="btn btn-ghost" href="https://groups.google.com/g/fittoll_testing">Join the testing group</a></p>
