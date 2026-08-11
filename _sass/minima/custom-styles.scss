@@ -1419,3 +1419,17 @@ body[data-drawer-open="true"] { overflow: hidden; }
 .faq-a p:last-child { margin-bottom: 0; }
 
 .faq-a a { color: var(--accent); }
+
+/* End-of-page call to action on the guide pages. These sit in .doc-body, not
+   in a .strip, so the `.strip > p.strip-foot` rule never matched them and they
+   inherited `.post-content p { margin: 0 0 16px }` -- zero top margin, which
+   left the button touching the FAQ's last divider.
+
+   Specificity matters here for the same reason it does on .strip-foot above:
+   both `.post-content p` and `.strip > p` are 0,1,1, so a bare `.page-cta`
+   (0,1,0) loses and the margin silently does nothing. Matching their shape
+   wins honestly, without !important. */
+.post-content p.page-cta,
+.strip > p.page-cta {
+  margin: 36px 0 0;
+}
