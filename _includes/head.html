@@ -13,6 +13,73 @@
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- feed_meta -%}
 
+  {%- if page.url == '/' -%}
+  {%- comment -%}
+    jekyll-seo-tag emits a generic WebSite node and nothing else. An app entity
+    with platform, price and features is what rich results and LLM answers read
+    -- and in this category LLMs answer almost entirely from store listings, so
+    this is the one machine-readable fact block we control.
+
+    Deliberately NO aggregateRating. The app has zero ratings; inventing one is
+    a structured-data violation and a lie. Add it only when ratings are real.
+
+    iOS only: Android is in closed testing and has no public listing to point
+    at. Claiming it here would be false.
+  {%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FitToll",
+    "alternateName": "FitToll — Exercise App Blocker",
+    "url": {{ '/' | absolute_url | jsonify }},
+    "description": {{ site.description | strip | jsonify }},
+    "applicationCategory": "HealthApplication",
+    "applicationSubCategory": "App Blocker",
+    "operatingSystem": "iOS 16.0 or later",
+    "downloadUrl": "https://apps.apple.com/us/app/fittoll/id6761677416",
+    "installUrl": "https://apps.apple.com/us/app/fittoll/id6761677416",
+    "image": {{ '/assets/og-card.png' | absolute_url | jsonify }},
+    "fileSize": "23.5 MB",
+    "isAccessibleForFree": true,
+    "author": {
+      "@type": "Person",
+      "name": "Aurobindo Gupta"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Blocks one app. Both exercises included."
+      },
+      {
+        "@type": "Offer",
+        "name": "Premium monthly",
+        "price": "5.99",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Premium annual",
+        "price": "29.99",
+        "priceCurrency": "USD"
+      }
+    ],
+    "featureList": [
+      "Blocks the apps you choose",
+      "Unlock by doing camera-verified push-ups or squats",
+      "On-device pose detection reads real joint angles",
+      "No video recorded or uploaded — works offline",
+      "Unlock timer counts active use, not wall-clock time",
+      "One emergency bypass, which doubles the reps next time",
+      "Three strictness levels"
+    ]
+  }
+  </script>
+  {%- endif -%}
+
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon-32.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon-16.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/favicon-192.png' | relative_url }}">
