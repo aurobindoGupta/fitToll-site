@@ -2,6 +2,39 @@
 layout: home
 title: FitToll
 seo_title: "FitToll — Pay the Toll to Scroll | Exercise App Blocker"
+faq:
+  - q: Does it really detect push-ups, or can I fake it?
+    a: >-
+      It reads your joint angles with on-device pose detection, so shaking the
+      phone or waving at the camera does nothing — you have to do the rep. More
+      on how that works in [AI rep counter](/ai-rep-counter/).
+  - q: Can I skip the exercise?
+    a: >-
+      There's no skip button. There is one emergency bypass, and using it
+      doubles the reps on your next unlock.
+  - q: Does my camera video go anywhere?
+    a: >-
+      No. Nothing is recorded and nothing is uploaded. Detection runs on your
+      phone and frames never leave it. It works in airplane mode.
+  - q: Which exercises can it count?
+    a: >-
+      Push-ups and squats, both free. See the
+      [push-up counter](/push-up-counter/) and
+      [squat counter](/squat-counter/) guides for camera placement.
+  - q: Is FitToll on Android?
+    a: >-
+      It's in closed testing while Google reviews production access. You can
+      join the tester group from the Get FitToll section above. iOS is live on
+      the App Store.
+  - q: What does it cost?
+    a: >-
+      Free to download. The free tier blocks one app and includes both
+      exercises. Premium is $5.99/month or $29.99/year and lifts the one-app
+      limit.
+  - q: How long does an app stay unlocked?
+    a: >-
+      As long as you earned, counted in active use rather than wall-clock time.
+      Closing the app pauses the clock instead of burning it.
 ---
 
 <section class="strip" markdown="1">
@@ -109,6 +142,14 @@ Premium blocks unlimited apps and unlocks longer unlock windows, at **$5.99/mont
 </section>
 
 <section class="strip" markdown="1">
+
+## Questions
+
+{% include faq.html %}
+
+</section>
+
+<section class="strip strip-alt" markdown="1">
 
 ## Tell us what's broken
 

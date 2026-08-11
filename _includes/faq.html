@@ -1,0 +1,15 @@
+{%- comment -%}
+  Renders page.faq visibly. head.html emits FAQPage JSON-LD from the SAME
+  front-matter list, so the structured data can never drift from what a
+  reader sees -- a mismatch there is a Google manual action, not a nit.
+{%- endcomment -%}
+{%- if page.faq -%}
+<div class="faq">
+  {%- for item in page.faq %}
+  <details class="faq-item">
+    <summary class="faq-q">{{ item.q }}</summary>
+    <div class="faq-a">{{ item.a | markdownify }}</div>
+  </details>
+  {%- endfor %}
+</div>
+{%- endif -%}
