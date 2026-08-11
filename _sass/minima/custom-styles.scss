@@ -47,6 +47,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
+  background: var(--surface-1);
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 16px);
   -webkit-text-size-adjust: 100%;
@@ -60,7 +61,10 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: var(--text-default);
-  background: var(--surface-1);
+  /* Base colour lives on html, not body. A body background propagates to the
+     canvas, which would paint OVER body::before at z-index -1 and hide the
+     grid entirely. */
+  background: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -129,6 +133,38 @@ button { font: inherit; }
   border-radius: var(--r-1);
   font-weight: 600;
   font-size: 13px;
+}
+
+/* ---- Page-wide grid field ---------------------------------------- */
+/* Two fixed layers behind every page: the grid, then the colour washes.
+   Fixed rather than scrolling so the fade stays anchored to the viewport --
+   a document-height grid would need a mask that stretches with content and
+   would read differently on a 400-word page than on the 2,000-word legal
+   ones. pointer-events:none so neither layer ever eats a click. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  /* Strongest toward the top, gone by the lower third, so body copy is never
+     read against ruled lines. */
+  mask-image: radial-gradient(125% 105% at 50% 0%, #000 32%, transparent 82%);
+  -webkit-mask-image: radial-gradient(125% 105% at 50% 0%, #000 32%, transparent 82%);
+}
+
+body::after {
+  background:
+    radial-gradient(120% 90% at 85% 0%, rgba(34, 211, 238, 0.05), transparent 62%),
+    radial-gradient(80% 70% at 5% 100%, rgba(244, 165, 42, 0.04), transparent 60%);
 }
 
 /* ---- Header ------------------------------------------------------ */
@@ -689,31 +725,26 @@ body[data-drawer-open="true"] { overflow: hidden; }
   --font-display: "Big Shoulders Display", "Geist", ui-sans-serif, sans-serif;
   --toll: #f4a52a;
   --toll-soft: rgba(244, 165, 42, 0.13);
-  --grid-line: rgba(255, 255, 255, 0.035);
+  /* Was 0.035 when the grid only sat behind the hero. Now that it runs behind
+     every page at every scroll position, 0.035 reads as ruled lines under body
+     copy on the long legal pages -- 0.020 keeps it as texture. */
+  --grid-line: rgba(255, 255, 255, 0.020);
 }
 
 .landing { width: 100%; }
 
 /* ---- Gate (hero) -------------------------------------------------- */
+/* The hero no longer paints its own grid or an opaque base -- the page-wide
+   field behind body::before shows through, so the grid runs unbroken from the
+   hero into the sections below instead of stopping at the section border.
+   Only the colour washes stay, which is what made the hero feel distinct. */
 .gate {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--border-subtle);
   background:
     radial-gradient(120% 90% at 85% 0%, rgba(34, 211, 238, 0.10), transparent 62%),
-    radial-gradient(80% 70% at 5% 100%, var(--toll-soft), transparent 60%),
-    var(--surface-0);
-}
-.gate-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(120% 100% at 50% 0%, #000 35%, transparent 78%);
-  -webkit-mask-image: radial-gradient(120% 100% at 50% 0%, #000 35%, transparent 78%);
-  pointer-events: none;
+    radial-gradient(80% 70% at 5% 100%, var(--toll-soft), transparent 60%);
 }
 .gate-inner {
   position: relative;
@@ -867,7 +898,10 @@ body[data-drawer-open="true"] { overflow: hidden; }
   padding-inline: max(var(--gutter-x), calc((100% - 1080px) / 2));
   border-bottom: 1px solid var(--border-subtle);
 }
-.strip-alt { background: var(--surface-1); }
+/* Was var(--surface-1) -- identical to the old body background, so it drew no
+   visible alternation at all while still being opaque enough to hide the grid.
+   A translucent lift both restores the banding and lets the field through. */
+.strip-alt { background: rgba(255, 255, 255, 0.016); }
 .strip:last-child { border-bottom: none; }
 
 .strip h2 {
@@ -1125,7 +1159,7 @@ body[data-drawer-open="true"] { overflow: hidden; }
 /* Very small phones: the grid texture at 64px reads as noise once the
    viewport is narrower than a few cells. */
 @media (max-width: 380px) {
-  .gate-grid { background-size: 48px 48px; }
+  body::before { background-size: 48px 48px; }
   .gate-actions .btn { font-size: 14.5px; }
 }
 
