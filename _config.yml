@@ -4,6 +4,14 @@ url: https://fittoll.com
 theme: minima
 permalink: pretty
 
+# Listed explicitly because we can't build locally to catch a silent drop:
+# seo-tag and feed arrive via the minima theme today, and naming them here
+# keeps that true if the theme's dependencies ever change. sitemap is new.
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
 # Header nav: brand mark in header doubles as Home, so nav lists only legal.
 header_pages:
   - privacy-policy.md
