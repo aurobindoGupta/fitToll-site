@@ -1281,3 +1281,26 @@ body[data-drawer-open="true"] { overflow: hidden; }
   .site-footer-tag:hover .tag-letter { transform: none; }
   .site-footer-tag::after { display: none; }
 }
+
+/* ---- 404 --------------------------------------------------------- */
+/* Its own heading rule because the site has no global h1 size: the doc
+   layout styles .doc-title and the landing page styles .gate-title, and
+   neither shape fits a standalone message page. Everything else here is
+   reused (.strip, .gate-eyebrow, .gate-actions, .btn). */
+.notfound {
+  min-height: 46vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.notfound h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(44px, 8vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--text-strong);
+  margin: 0 0 22px;
+}
