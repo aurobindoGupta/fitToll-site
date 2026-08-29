@@ -14,7 +14,7 @@ FitToll blocks the apps you keep losing time to. To open one, you complete camer
 | Privacy Policy | https://fittoll.com/privacy-policy/ |
 | Terms of Use | https://fittoll.com/terms-of-use/ |
 | iOS | [Download on the App Store](https://apps.apple.com/us/app/fittoll/id6761677416) |
-| Android | Closed testing — [join the testing group](https://groups.google.com/g/fittoll_testing) |
+| Android | [Get it on Google Play](https://play.google.com/store/apps/details?id=com.scrollblocker.android) |
 | Support | [support@fittoll.com](mailto:support@fittoll.com) |
 
 The privacy policy and terms hosted here are the versions linked from the app store listings, so they are the authoritative copies.

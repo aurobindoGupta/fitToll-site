@@ -23,9 +23,8 @@ faq:
       [squat counter](/squat-counter/) guides for camera placement.
   - q: Is FitToll on Android?
     a: >-
-      It's in closed testing while Google reviews production access. You can
-      join the tester group from the Get FitToll section above. iOS is live on
-      the App Store.
+      Yes. It's on Google Play, and on the App Store for iPhone. Android 8.0 or
+      later, iOS 16 or later.
   - q: What does it cost?
     a: >-
       Free to download. The free tier blocks one app and includes both
@@ -117,14 +116,14 @@ Live on the App Store.
 <p class="platform-note">Use code <code>FITTOLL30</code> for a free month of Premium. Sign in, open the paywall, redeem. One per account.</p>
 </div>
 
-<div class="platform platform-testing" id="android" markdown="1">
-<p class="platform-status platform-status-wait">Closed testing</p>
+<div class="platform platform-live" id="android" markdown="1">
+<p class="platform-status">Available now</p>
 ### Android {#android-heading}
-The app is built and working. Google's production access needs at least 12 testers actively using it for 14 continuous days before they'll review it again, so it's in closed testing until that clears.
+Live on Google Play.
 
-<p class="platform-cta"><a class="btn btn-ghost" href="https://groups.google.com/g/fittoll_testing">Join the testing group</a></p>
+<p class="platform-cta"><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.scrollblocker.android">Get it on Google Play</a></p>
 
-<p class="platform-note">Join the group, read the pinned post for the Play opt-in link, then install from the Play Store like anything else. Using it for a few days is the part that actually counts.</p>
+<p class="platform-note">Use code <code>FITTOLL30</code> for a free month of Premium. Sign in, open the paywall, redeem. One per account.</p>
 </div>
 
 </div>

@@ -55,8 +55,9 @@
     Deliberately NO aggregateRating. The app has zero ratings; inventing one is
     a structured-data violation and a lie. Add it only when ratings are real.
 
-    iOS only: Android is in closed testing and has no public listing to point
-    at. Claiming it here would be false.
+    Both platforms since 2026-08-29, when Play production access was granted
+    and the listing went public. It was iOS-only before that because Android
+    had no public listing to point at.
   {%- endcomment -%}
   <script type="application/ld+json">
   {
@@ -68,9 +69,15 @@
     "description": {{ site.description | strip | jsonify }},
     "applicationCategory": "HealthApplication",
     "applicationSubCategory": "App Blocker",
-    "operatingSystem": "iOS 16.0 or later",
-    "downloadUrl": "https://apps.apple.com/us/app/fittoll/id6761677416",
-    "installUrl": "https://apps.apple.com/us/app/fittoll/id6761677416",
+    "operatingSystem": "iOS 16.0 or later, Android 8.0 or later",
+    "downloadUrl": [
+      "https://apps.apple.com/us/app/fittoll/id6761677416",
+      "https://play.google.com/store/apps/details?id=com.scrollblocker.android"
+    ],
+    "installUrl": [
+      "https://apps.apple.com/us/app/fittoll/id6761677416",
+      "https://play.google.com/store/apps/details?id=com.scrollblocker.android"
+    ],
     "image": {{ '/assets/og-card.png' | absolute_url | jsonify }},
     "fileSize": "23.5 MB",
     "isAccessibleForFree": true,
