@@ -81,9 +81,6 @@ You can cancel your subscription at any time through your device's subscription 
 ### Refunds
 Refund requests are handled by the Apple App Store or Google Play Store according to their respective refund policies. We do not process refunds directly.
 
-### Promotional Access
-Promotional codes may be offered from time to time, granting temporary premium access. Promotional access is non-transferable and subject to the terms specified at the time of the offer.
-
 ## Exercise Verification
 
 ### Camera-Based Verification
