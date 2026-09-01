@@ -7,7 +7,7 @@ description: >-
   video is recorded, nothing is uploaded, and camera frames never leave
   your phone.
 eyebrow: Legal
-last_updated: July 22, 2026
+last_updated: September 1, 2026
 ---
 
 ## Introduction
@@ -87,22 +87,28 @@ We also use the operating system's native crash diagnostic APIs — **Apple Metr
 
 ### Promotional Code Validation
 
-When you attempt to redeem a promotional code, FitToll temporarily records your email address, the code you attempted, and a running attempt count in a secure Firestore collection named `promo_attempts`. This record exists solely to prevent abuse of single-use codes (for example, automated scraping or brute-force redemption attempts).
+In-app promotional code redemption has been removed from FitToll as of app version 1.5.0. This section describes how it works on earlier versions, which are still in use, and applies to redemption records created while it was available.
 
-These records are:
+Promo codes involve two separate records.
+
+**Redemption attempts.** When you attempt to redeem a code, FitToll records your email address, the code you attempted, and a running attempt count in a Firestore collection named `promo_attempts`. This exists solely to prevent abuse (for example, automated scraping or brute-force redemption attempts). These records are:
 
 - **Limited in scope:** email + attempted code + attempt count only. No device identifiers, IP addresses, or profile data are stored.
-- **Short-lived:** automatically deleted seven (7) days after your most recent attempt.
-- **Siloed:** not linked to your public user profile, your exercise history, or your subscription record.
+- **Short-lived:** marked for automatic deletion seven (7) days after your most recent attempt.
 - **Not shared:** never transmitted to third-party services for advertising, analytics, or any purpose other than our own anti-abuse enforcement.
 
-If you never use a promo code, no entry is ever created.
+**Successful redemptions.** When a code is redeemed successfully, FitToll stores a record in a collection named `promo_redemptions` containing your account identifier, your email address, the code redeemed, the time of redemption, and the length of premium access granted. This record is what enforces one redemption per person per code. Because it must remain valid for as long as that limit applies, it is **retained for as long as your account exists** rather than expiring on a timer. It is deleted when you delete your account (see Your Rights below).
+
+Both records are siloed: neither is linked to your exercise history, and neither is shared with third parties.
+
+If you never redeem or attempt a promo code, no entry is created in either collection.
 
 ### Data Retention
 
 - **Exercise History:** Individual exercise sessions are automatically deleted from your device 90 days after they are recorded. This happens on a rolling basis — each session is removed once it passes 90 days old, whether or not you open the app. Nothing is sent anywhere before or after deletion; the data only ever existed on your device.
 - **Other Local Data:** Your preferences, blocking configuration, and settings remain on your device until you delete the app or clear app data.
 - **Account Data:** Your authentication account data is retained as long as your account is active. You can request account deletion at any time (see Your Rights below).
+- **Promo Redemption Records:** If you redeemed a promotional code, that record (account identifier, email, code, date, access granted) is retained as long as your account is active, and is deleted with your account. Redemption *attempt* records expire after 7 days.
 
 ## Data Sharing
 
@@ -117,7 +123,7 @@ FitToll uses the following third-party services:
 | Service | Purpose | Data Shared |
 |---------|---------|-------------|
 | Firebase Authentication | User login and account management | Email address, authentication tokens |
-| Firebase Cloud Functions | Promo code validation, trial entitlement | Promo code text, authentication token, App Check token |
+| Firebase Cloud Functions | Promo code validation, trial entitlement | Promo code text, email address, account identifier, authentication token, App Check token |
 | Firebase Crashlytics | Crash diagnostics | Stack traces, device model, OS version, app version, installation UUID, IP address (transit only) |
 | [RevenueCat](https://www.revenuecat.com/privacy/) | Subscription management and billing | Firebase UID, purchase transactions, device metadata |
 | Sign in with Google | Optional login method | Authentication credentials (handled by Google) |
