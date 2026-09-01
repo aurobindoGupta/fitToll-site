@@ -113,7 +113,7 @@ Live on the App Store.
 
 <p class="platform-cta"><a class="btn btn-primary" href="https://apps.apple.com/us/app/fittoll/id6761677416">Download on the App Store</a></p>
 
-<p class="platform-note">Use code <code>FITTOLL30</code> for a free month of Premium. Sign in, open the paywall, redeem. One per account.</p>
+<p class="platform-note"><a href="https://apps.apple.com/redeem?ctx=offercodes&amp;id=6761677416&amp;code=FITTOLL30">Redeem <code>FITTOLL30</code></a> for a free month of Premium. One per Apple ID.</p>
 </div>
 
 <div class="platform platform-live" id="android" markdown="1">
