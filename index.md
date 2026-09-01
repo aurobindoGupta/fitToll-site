@@ -10,8 +10,10 @@ faq:
       on how that works in [AI rep counter](/ai-rep-counter/).
   - q: Can I skip the exercise?
     a: >-
-      There's no skip button. There is one emergency bypass, and using it
-      doubles the reps on your next unlock.
+      There's no skip button. You get three emergency bypasses a day, and each
+      one doubles the reps for that app on your next unlock — the doubling only
+      clears after a clean unlock. Spend all three and your blocking setup
+      resets.
   - q: Does my camera video go anywhere?
     a: >-
       No. Nothing is recorded and nothing is uploaded. Detection runs on your
@@ -90,8 +92,8 @@ Earn fifteen minutes and you get fifteen real minutes. Closing the app pauses th
 </div>
 
 <div class="fact" markdown="1">
-#### One bypass, and it costs you
-There's a single emergency bypass. Using it doubles the reps on your next unlock.
+#### Three bypasses a day, and each costs you
+Every emergency bypass doubles the reps for that app on your next unlock, and the doubling only clears after a clean one. Spend all three and your blocking setup resets.
 </div>
 
 </div>
