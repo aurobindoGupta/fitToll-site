@@ -1,0 +1,67 @@
+# FitToll
+
+> An app blocker that charges a physical toll. When you open an app you've
+> blocked, FitToll takes the screen first and asks for push-ups or squats,
+> counted by your camera. Pose detection reads real joint angles, so the reps
+> have to be real. Everything runs on the device — no video is recorded and
+> nothing is uploaded.
+
+FitToll is available on iOS (16.0+) and Android (8.0+). Developed by Aurobindo
+Gupta. Tagline: "Pay the toll to scroll."
+
+## How the exercise gate works
+
+- Pose detection runs on-device: Apple Vision on iOS, Google ML Kit on Android.
+  It works in airplane mode.
+- The counter tracks joint angles, not motion — shaking the phone, waving at the
+  camera, or tapping the screen produces no reps.
+- Half-reps do not count. A rep requires the full range of movement.
+- Push-ups add a hip-angle form check at the bottom, which distinguishes a
+  push-up from a sag. Squats calibrate to your body and distance at the start of
+  every session, and offer a front view (counts reps) or side view (counts reps
+  and checks form).
+- Three strictness levels: Beginner, Intermediate, Pro.
+- The unlock timer counts active use, not wall-clock time. Closing the app pauses
+  the clock rather than burning it.
+- There is no skip button. There are three emergency bypasses per day; each one
+  doubles the reps for that app on the next unlock, the doubling clears only
+  after a clean unlock, and spending all three resets your blocking setup.
+
+## Pricing
+
+- Free: block one app, both exercises (push-ups and squats) at all difficulties,
+  15-minute unlocks, last 7 days of stats.
+- Premium: $5.99/month or $29.99/year. Lifts the one-app limit, allows longer
+  unlock durations, and shows the full 90 days of stored exercise history.
+- Exercise sessions are deleted from the device after 90 days on both tiers.
+
+## Privacy
+
+- Camera frames are processed on-device and discarded. No images, video, or pose
+  data is transmitted or stored.
+- FitToll does not track which apps you use beyond detecting that a blocked app
+  was opened, and does not collect location, contacts, or health data.
+- On Android, app detection uses the Usage Access permission
+  (`UsageStatsManager`). FitToll does not use an Android Accessibility Service.
+  On iOS it uses the FamilyControls / Screen Time API.
+
+## Pages
+
+- [Home](https://fittoll.com/): what FitToll is, how the gate works, pricing.
+- [AI rep counter](https://fittoll.com/ai-rep-counter/): how the on-device pose
+  detection counts a rep, and why motion-based counters can be fooled.
+- [Push-up counter](https://fittoll.com/push-up-counter/): camera placement, what
+  counts as a rep, the hip-angle form check.
+- [Squat counter](https://fittoll.com/squat-counter/): per-session calibration,
+  front view vs side view, camera placement.
+- [Privacy policy](https://fittoll.com/privacy-policy/)
+- [Terms of use](https://fittoll.com/terms-of-use/)
+
+## Get the app
+
+- [App Store](https://apps.apple.com/us/app/fittoll/id6761677416)
+- [Google Play](https://play.google.com/store/apps/details?id=com.scrollblocker.android)
+
+## Contact
+
+- support@fittoll.com
