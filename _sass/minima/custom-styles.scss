@@ -1433,3 +1433,17 @@ body[data-drawer-open="true"] { overflow: hidden; }
 .strip > p.page-cta {
   margin: 36px 0 0;
 }
+
+/* Two store buttons in one page CTA (App Store + Google Play).
+   Deliberately NOT .gate-actions: that caps .btn at max-width 220px with a
+   fixed 46px height, and "Download on the App Store" wraps to two lines inside
+   it and overflows the button box. Buttons here keep their natural widths
+   (215px / 174px measured) and wrap to a second row when the column is too
+   narrow, which is the phone case. */
+.post-content p.page-cta-duo,
+.strip > p.page-cta-duo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}

@@ -95,4 +95,4 @@ which is why it counts the way it does.
 
 {% include faq.html %}
 
-<p class="page-cta"><a class="btn btn-primary" href="https://apps.apple.com/us/app/fittoll/id6761677416">Download on the App Store</a></p>
+<p class="page-cta page-cta-duo"><a class="btn btn-primary" href="https://apps.apple.com/us/app/fittoll/id6761677416">Download on the App Store</a><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.scrollblocker.android">Get it on Google Play</a></p>
