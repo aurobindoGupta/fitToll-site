@@ -50,12 +50,13 @@ defaults:
 twitter:
   card: summary_large_image
 
-# Emitted as sameAs, tying this domain to the App Store listing as one entity.
+# Emitted as sameAs, tying this domain to both store listings as one entity.
 # Only URLs verified to exist — no placeholder social profiles.
 social:
   name: FitToll
   links:
     - https://apps.apple.com/us/app/fittoll/id6761677416
+    - https://play.google.com/store/apps/details?id=com.scrollblocker.android
 
 # G-17 [SITE-M-01]: keep internal docs off the public site.
 exclude:
