@@ -22,7 +22,7 @@ FitToll is developed and maintained by Aurobindo Gupta ("we", "us", "our"). If y
 
 ### Information You Provide
 
-- **Account Information:** When you create an account, we collect your email address and display name through our authentication providers (Sign in with Google, Sign in with Apple, Facebook Login, or email/password). This information is used solely for account creation and login.
+- **Account Information:** When you create an account, we collect your email address and display name through our authentication providers. On iOS these are Sign in with Apple, Sign in with Google, and email/password; on Android they are Sign in with Google and email/password. This information is used solely for account creation and login.
 
 - **App Preferences:** Your settings, such as which apps you choose to block, exercise difficulty level, and unlock duration. These preferences are stored locally on your device.
 
@@ -127,14 +127,12 @@ FitToll uses the following third-party services:
 | Firebase Crashlytics | Crash diagnostics | Stack traces, device model, OS version, app version, installation UUID, IP address (transit only) |
 | [RevenueCat](https://www.revenuecat.com/privacy/) | Subscription management and billing | Firebase UID, purchase transactions, device metadata |
 | Sign in with Google | Optional login method | Authentication credentials (handled by Google) |
-| Sign in with Apple | Optional login method | Authentication credentials (handled by Apple) |
-| Facebook Login | Optional login method | Authentication credentials (handled by Facebook) |
+| Sign in with Apple | Optional login method (iOS) | Authentication credentials (handled by Apple) |
 
 Each of these services has its own privacy policy. We encourage you to review them:
 
 - [Google Privacy Policy](https://policies.google.com/privacy)
 - [Apple Privacy Policy](https://www.apple.com/legal/privacy/)
-- [Facebook Privacy Policy](https://www.facebook.com/privacy/policy/)
 
 ## Device Permissions
 

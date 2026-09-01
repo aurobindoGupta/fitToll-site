@@ -7,7 +7,7 @@ description: >-
   subscriptions, acceptable use, and how camera-verified exercise unlocking
   works.
 eyebrow: Legal
-last_updated: July 22, 2026
+last_updated: September 1, 2026
 ---
 
 ## Agreement to Terms
@@ -24,7 +24,7 @@ You must be at least 13 years old to use FitToll. By using the App, you represen
 
 ## Account Registration
 
-To use certain features of FitToll, you may need to create an account using one of our supported authentication methods (Google, Apple, Facebook, or email/password).
+To use certain features of FitToll, you may need to create an account using one of our supported authentication methods. On iOS these are Sign in with Apple, Sign in with Google, and email/password; on Android they are Sign in with Google and email/password.
 
 You are responsible for:
 
@@ -50,7 +50,7 @@ You agree to use FitToll only for its intended purpose as a personal digital wel
 
 ### How It Works
 
-FitToll uses platform-provided APIs (Apple FamilyControls/Screen Time API on iOS, UsageStats/Accessibility services on Android) to detect when blocked apps are launched and to display an exercise screen. You select which apps to block, and only you can modify this selection.
+FitToll uses platform-provided APIs (Apple FamilyControls/Screen Time API on iOS, the Usage Access permission and `UsageStatsManager` API on Android) to detect when blocked apps are launched and to display an exercise screen. FitToll does not use an Android Accessibility Service. You select which apps to block, and only you can modify this selection.
 
 ### Important Disclaimers
 
@@ -129,7 +129,7 @@ You retain ownership of any data you create within the App (exercise preferences
 
 ## Third-Party Services
 
-FitToll integrates with third-party services for authentication (Firebase, Google, Apple, Facebook). Your use of these services is subject to their respective terms of service. We are not responsible for the practices or policies of third-party services.
+FitToll integrates with third-party services for authentication (Firebase, Google, Apple) and for subscription billing (RevenueCat, and the Apple App Store or Google Play). Your use of these services is subject to their respective terms of service. We are not responsible for the practices or policies of third-party services.
 
 ## Availability and Updates
 
