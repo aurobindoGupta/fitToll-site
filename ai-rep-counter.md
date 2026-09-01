@@ -64,9 +64,9 @@ standing where you actually are, at whatever distance the phone happens to
 be, and scales to that. Heights and room sizes differ; a fixed threshold
 would work for one body and fail for the next.
 
-On top of that sit three strictness levels. Beginner, Intermediate and
-Advanced move how far counts as far, so the count stays honest without
-being useless to whoever is doing it.
+On top of that sit three strictness levels. Beginner, Intermediate and Pro
+move how far counts as far, so the count stays honest without being
+useless to whoever is doing it.
 
 ## Push-ups check form, too
 

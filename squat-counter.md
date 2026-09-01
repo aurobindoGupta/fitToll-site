@@ -70,9 +70,9 @@ side view tells you more.
 
 Down and back up, or nothing. A dip that never reaches the bottom is a
 movement the counter has seen start and abandon, so the number stays put.
-Three strictness levels — Beginner, Intermediate, Advanced — decide how
-deep "down" has to be, because your squat and mine are probably not the
-same squat.
+Three strictness levels — Beginner, Intermediate, Pro — decide how deep
+"down" has to be, because your squat and mine are probably not the same
+squat.
 
 ## Nothing leaves your phone
 

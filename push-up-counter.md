@@ -64,10 +64,9 @@ down there and FitToll says so instead of quietly banking the rep.
 ## Three strictness levels
 
 Your push-up and mine are probably not the same push-up. Beginner,
-Intermediate and Advanced move the thresholds — how far down counts as
-down, how straight counts as straight — so the counter can be honest
-without being discouraging. Pick the one that matches where you actually
-are.
+Intermediate and Pro move the thresholds — how far down counts as down,
+how straight counts as straight — so the counter can be honest without
+being discouraging. Pick the one that matches where you actually are.
 
 ## Nothing leaves your phone
 
