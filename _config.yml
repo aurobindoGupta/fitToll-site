@@ -21,10 +21,11 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-# Header nav: brand mark in header doubles as Home, so nav lists only legal.
+# Header nav: the three pages we want to rank. Legal lives in the footer nav.
 header_pages:
-  - privacy-policy.md
-  - terms-of-use.md
+  - exercise-app-blocker.md
+  - no-skip-button.md
+  - active-use-timer.md
 
 # jekyll-titles-from-headings is auto-enabled by GH Pages. Tell it to leave
 # in-body H1s alone -- our front-matter sets page.title explicitly, and CSS
@@ -39,6 +40,7 @@ defaults:
   - scope:
       path: ""
     values:
+      last_modified_at: 2026-09-02
       image:
         path: /assets/og-card.png
         width: 1200
@@ -47,16 +49,10 @@ defaults:
           FitToll — pay the toll to scroll. Camera-verified push-ups or squats
           to open the apps you doomscroll.
 
-twitter:
-  card: summary_large_image
-
 # Emitted as sameAs, tying this domain to both store listings as one entity.
 # Only URLs verified to exist — no placeholder social profiles.
 social:
   name: FitToll
-  links:
-    - https://apps.apple.com/us/app/fittoll/id6761677416
-    - https://play.google.com/store/apps/details?id=com.scrollblocker.android
 
 # G-17 [SITE-M-01]: keep internal docs off the public site.
 exclude:
