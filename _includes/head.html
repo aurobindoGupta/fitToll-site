@@ -45,75 +45,146 @@
   </script>
   {%- endif -%}
 
+  {%- comment -%}
+    seo-tag is called with title=false so each page can set a keyword-bearing
+    seo_title. That also leaves og:title falling back to the bare page.title,
+    which made the homepage share card read just "FitToll". Re-emit both from
+    seo_title; a later duplicate wins in the parsers that matter.
+    twitter:card is hard-coded because there is no @handle -- the twitter block
+    in _config.yml made seo-tag emit twitter:site content="@" on every page.
+  {%- endcomment -%}
+  <meta property="og:title" content="{{ page.seo_title | default: site.title }}">
+  <meta name="twitter:title" content="{{ page.seo_title | default: site.title }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {%- if page.robots %}
+  <meta name="robots" content="{{ page.robots }}">
+  {%- endif %}
+
   {%- if page.url == '/' -%}
   {%- comment -%}
-    jekyll-seo-tag emits a generic WebSite node and nothing else. An app entity
-    with platform, price and features is what rich results and LLM answers read
-    -- and in this category LLMs answer almost entirely from store listings, so
-    this is the one machine-readable fact block we control.
+    One @graph with an Organization and the app, cross-referenced by @id --
+    Google's documented way to tell it two blocks describe linked things.
+    sameAs lives here rather than on seo-tag's WebSite node, which asserted
+    the App Store page IS this website.
 
-    Deliberately NO aggregateRating. The app has zero ratings; inventing one is
-    a structured-data violation and a lie. Add it only when ratings are real.
+    Deliberately NO aggregateRating. The app has zero ratings; inventing one
+    is a structured-data violation and a lie, and copying the store averages
+    is separately banned ("Don't aggregate reviews or ratings from other
+    websites"). The cost is that the app is ineligible for a Software App
+    rich result, which requires a rating. That trade is correct.
 
-    Both platforms since 2026-08-29, when Play production access was granted
-    and the listing went public. It was iOS-only before that because Android
-    had no public listing to point at.
+    Every featureList string is visible on this page. Do not add claims the
+    page does not show -- marking up invisible content is a guidelines
+    violation.
   {%- endcomment -%}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "FitToll",
-    "alternateName": "FitToll — Exercise App Blocker",
-    "url": {{ '/' | absolute_url | jsonify }},
-    "description": {{ site.description | strip | jsonify }},
-    "applicationCategory": "HealthApplication",
-    "applicationSubCategory": "App Blocker",
-    "operatingSystem": "iOS 16.0 or later, Android 8.0 or later",
-    "downloadUrl": [
-      "https://apps.apple.com/us/app/fittoll/id6761677416",
-      "https://play.google.com/store/apps/details?id=com.scrollblocker.android"
-    ],
-    "installUrl": [
-      "https://apps.apple.com/us/app/fittoll/id6761677416",
-      "https://play.google.com/store/apps/details?id=com.scrollblocker.android"
-    ],
-    "image": {{ '/assets/og-card.png' | absolute_url | jsonify }},
-    "fileSize": "23.5 MB",
-    "isAccessibleForFree": true,
-    "author": {
-      "@type": "Person",
-      "name": "Aurobindo Gupta"
-    },
-    "offers": [
+    "@graph": [
       {
-        "@type": "Offer",
-        "name": "Free",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Blocks one app. Both exercises included."
+        "@type": "Organization",
+        "@id": "https://fittoll.com/#organization",
+        "name": "FitToll",
+        "url": "https://fittoll.com/",
+        "email": "support@fittoll.com",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://fittoll.com/#logo",
+          "url": "https://fittoll.com/assets/favicon-512.png",
+          "width": 512,
+          "height": 512,
+          "caption": "FitToll"
+        },
+        "founder": {
+          "@type": "Person",
+          "@id": "https://fittoll.com/#founder",
+          "name": "Aurobindo Gupta"
+        },
+        "sameAs": [
+          "https://apps.apple.com/us/app/fittoll/id6761677416",
+          "https://play.google.com/store/apps/details?id=com.scrollblocker.android"
+        ]
       },
       {
-        "@type": "Offer",
-        "name": "Premium monthly",
-        "price": "5.99",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "name": "Premium annual",
-        "price": "29.99",
-        "priceCurrency": "USD"
+        "@type": ["SoftwareApplication", "MobileApplication"],
+        "@id": "https://fittoll.com/#app",
+        "name": "FitToll",
+        "alternateName": "FitToll — Exercise App Blocker",
+        "url": {{ '/' | absolute_url | jsonify }},
+        "description": {{ site.description | strip | jsonify }},
+        "applicationCategory": "HealthApplication",
+        "applicationSubCategory": "App Blocker",
+        "operatingSystem": ["iOS 16.0 or later", "Android 8.0 or later"],
+        "isAccessibleForFree": true,
+        "image": {{ '/assets/og-card.png' | absolute_url | jsonify }},
+        "publisher": { "@id": "https://fittoll.com/#organization" },
+        "author": { "@id": "https://fittoll.com/#founder" },
+        "downloadUrl": [
+          "https://apps.apple.com/us/app/fittoll/id6761677416",
+          "https://play.google.com/store/apps/details?id=com.scrollblocker.android"
+        ],
+        "installUrl": [
+          "https://apps.apple.com/us/app/fittoll/id6761677416",
+          "https://play.google.com/store/apps/details?id=com.scrollblocker.android"
+        ],
+        "sameAs": [
+          "https://apps.apple.com/us/app/fittoll/id6761677416",
+          "https://play.google.com/store/apps/details?id=com.scrollblocker.android"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "@id": "https://fittoll.com/#offer-free",
+            "name": "Free",
+            "description": "Blocks one app. Both exercises included.",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "seller": { "@id": "https://fittoll.com/#organization" }
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://fittoll.com/#offer-monthly",
+            "name": "Premium monthly",
+            "price": "5.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "seller": { "@id": "https://fittoll.com/#organization" },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": 5.99,
+              "priceCurrency": "USD",
+              "billingDuration": 1,
+              "unitCode": "MON"
+            }
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://fittoll.com/#offer-annual",
+            "name": "Premium annual",
+            "price": "29.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "seller": { "@id": "https://fittoll.com/#organization" },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": 29.99,
+              "priceCurrency": "USD",
+              "billingDuration": 12,
+              "unitCode": "MON"
+            }
+          }
+        ],
+        "featureList": [
+          "Blocks the apps you choose",
+          "Unlock by doing camera-verified push-ups or squats",
+          "On-device pose detection reads real joint angles",
+          "No video recorded or uploaded — works offline",
+          "Unlock timer counts active use, not wall-clock time",
+          "Three emergency bypasses a day, each doubling the reps next time",
+          "Three strictness levels"
+        ]
       }
-    ],
-    "featureList": [
-      "Blocks the apps you choose",
-      "Unlock by doing camera-verified push-ups or squats",
-      "On-device pose detection reads real joint angles",
-      "No video recorded or uploaded — works offline",
-      "Unlock timer counts active use, not wall-clock time",
-      "Three emergency bypasses a day, each doubling the reps next time",
-      "Three strictness levels"
     ]
   }
   </script>
