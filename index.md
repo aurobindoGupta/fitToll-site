@@ -34,8 +34,10 @@ faq:
       limit.
   - q: How long does an app stay unlocked?
     a: >-
-      As long as you earned, counted in active use rather than wall-clock time.
-      Closing the app pauses the clock instead of burning it.
+      For the window you set: up to fifteen minutes on the free tier, up to two
+      hours on Premium. The window runs on real time from the moment the app
+      unlocks, so closing the app does not pause it and unused minutes are not
+      saved for later. When it ends, the app is blocked again.
 ---
 
 <section class="strip" markdown="1">
@@ -87,8 +89,8 @@ No video is recorded and nothing is uploaded. The detection runs locally, and it
 </div>
 
 <div class="fact" markdown="1">
-#### The timer counts active use
-Earn fifteen minutes and you get fifteen real minutes. Closing the app pauses the clock instead of burning it.
+#### Every unlock ends
+Fifteen minutes means fifteen minutes on the clock, starting when the app unlocks. Closing the app does not pause it, and when the time is up the app is blocked again.
 </div>
 
 <div class="fact" markdown="1">

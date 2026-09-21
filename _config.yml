@@ -20,12 +20,13 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # Header nav: the three pages we want to rank. Legal lives in the footer nav.
 header_pages:
   - exercise-app-blocker.md
   - no-skip-button.md
-  - active-use-timer.md
+  - unlock-timer.md
 
 # jekyll-titles-from-headings is auto-enabled by GH Pages. Tell it to leave
 # in-body H1s alone -- our front-matter sets page.title explicitly, and CSS
@@ -40,7 +41,7 @@ defaults:
   - scope:
       path: ""
     values:
-      last_modified_at: 2026-09-02
+      last_modified_at: 2026-09-21
       image:
         path: /assets/og-card.png
         width: 1200

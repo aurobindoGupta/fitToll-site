@@ -21,8 +21,9 @@ Gupta. Tagline: "Pay the toll to scroll."
   every session, and offer a front view (counts reps) or side view (counts reps
   and checks form).
 - Three strictness levels: Beginner, Intermediate, Pro.
-- The unlock timer counts active use, not wall-clock time. Closing the app pauses
-  the clock rather than burning it.
+- Each unlock is a fixed window of real time, counted from the moment the app
+  unlocks. Closing the app does not pause it and unused minutes are not saved.
+  Each app has its own window.
 - There is no skip button. There are three emergency bypasses per day; each one
   doubles the reps for that app on the next unlock, the doubling clears only
   after a clean unlock, and spending all three resets your blocking setup.

@@ -71,15 +71,16 @@ before it accepts a rep. All three are available on the free tier. Strictness
 is about what counts as a rep, not about how many reps you owe — that number
 is yours to set per app.
 
-## The timer counts your attention, not the clock
+## Every unlock has an end
 
-Most unlock windows are wall-clock timers: you earn fifteen minutes and those
-minutes drain whether you are looking at the phone or not.
+FitToll's unlock window runs on real time. Earn fifteen minutes and you get
+fifteen minutes from the moment the app unlocks; close the app and the clock
+keeps running. When it runs out, the app is blocked again and opening it costs
+another set of reps.
 
-FitToll's unlock timer counts **active use**. Close the blocked app and the
-clock pauses. Come back and it resumes where it stopped. You get the time you
-actually asked for, and nothing is quietly consumed while your phone is in
-your pocket.
+That is the point of the gate. A window that paused whenever you looked away
+could stay open indefinitely for someone who only dips in, and a gate that
+stays open is not a gate.
 
 ## When you genuinely cannot do reps
 

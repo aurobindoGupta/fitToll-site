@@ -90,17 +90,17 @@ push-up from a sag.
 This matters for the same reason the missing skip button matters. A gate you
 can talk your way past is not a gate.
 
-## And the timer does not leak
+## And every unlock ends
 
 When the reps are done, the app opens for the unlock window you set. That
-window counts **active use**, not wall-clock time — close the app and the
-clock pauses.
+window is real time, counted from the moment the app unlocks — closing the app
+does not pause it.
 
-That is deliberate. A wall-clock window creates its own pressure to keep
-scrolling so the earned minutes are not wasted. A window that pauses removes
-the reason to hurry, and you spend the time you actually wanted.
+That is deliberate. A timer that pauses whenever you leave the app never has
+to run out: dip in for a minute at a time and a fifteen-minute unlock can stay
+open for days. A fixed window means the gate always comes back.
 
-There is more on that in [how the unlock timer works]({{ '/active-use-timer/' | relative_url }}).
+There is more on that in [how the unlock timer works]({{ '/unlock-timer/' | relative_url }}).
 
 ## Try it
 
