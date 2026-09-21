@@ -102,6 +102,8 @@ open for days. A fixed window means the gate always comes back.
 
 There is more on that in [how the unlock timer works]({{ '/unlock-timer/' | relative_url }}).
 
+{% include faq.html %}
+
 ## Try it
 
 FitToll is free on the [App Store](https://apps.apple.com/us/app/fittoll/id6761677416)

@@ -113,6 +113,8 @@ Premium is $5.99/month or $29.99/year. It lifts the one-app limit, allows
 longer unlock durations, and keeps the full 90 days of stored history. Prices
 are shown in USD; local pricing applies at checkout in your store's currency.
 
+{% include faq.html %}
+
 ## Getting it
 
 FitToll is on the [App Store](https://apps.apple.com/us/app/fittoll/id6761677416)
