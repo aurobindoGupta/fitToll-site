@@ -49,6 +49,12 @@ Gupta. Tagline: "Pay the toll to scroll."
 ## Pages
 
 - [Home](https://fittoll.com/): what FitToll is, how the gate works, pricing.
+- [Exercise app blocker](https://fittoll.com/exercise-app-blocker/): what FitToll
+  does, how the gate works, what is free.
+- [No skip button](https://fittoll.com/no-skip-button/): why there is no skip,
+  how the three emergency bypasses work, and why reps cannot be faked.
+- [Unlock timer](https://fittoll.com/unlock-timer/): how the unlock window works
+  and why it runs on real time.
 - [AI rep counter](https://fittoll.com/ai-rep-counter/): how the on-device pose
   detection counts a rep, and why motion-based counters can be fooled.
 - [Push-up counter](https://fittoll.com/push-up-counter/): camera placement, what
