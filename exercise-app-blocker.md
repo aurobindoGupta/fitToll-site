@@ -11,7 +11,7 @@ faq:
     a: >-
       An app blocker that puts a physical task between you and a distracting
       app. Instead of tapping past a reminder, you do reps. FitToll counts them
-      with your camera, so the app opens only after the work is done.
+      with your camera, and the app unlocks when the work is done.
   - q: Does it work on Android as well as iPhone?
     a: >-
       Yes, both. FitToll runs on iOS 16.0 or later and Android 8.0 or later.
@@ -38,13 +38,13 @@ your camera before the blocked app will open.
 
 ## How the gate works
 
-You pick the apps you want blocked and how many reps they cost. When you
-open one, FitToll takes the screen first.
+You pick the apps you want blocked. When you open one, FitToll's gate covers
+it.
 
 The camera watches you through an on-device pose model — Apple Vision on
 iOS, Google ML Kit on Android. It reads the angles at your joints and
 counts a rep when you complete the full range of movement. When you reach
-the number, the blocked app opens.
+your rep target, the blocked app opens.
 
 There is no button that skips this.
 
@@ -69,28 +69,25 @@ down and all the way back up.
 Beginner, Intermediate and Pro change how much range the counter demands
 before it accepts a rep. All three are available on the free tier. Strictness
 is about what counts as a rep, not about how many reps you owe — that number
-is yours to set per app.
+is yours to set.
 
-## Every unlock has an end
+## The clock does not pause
 
 FitToll's unlock window runs on real time. Earn fifteen minutes and you get
 fifteen minutes from the moment the app unlocks; close the app and the clock
-keeps running. When it runs out, the app is blocked again and opening it costs
-another set of reps.
+keeps running.
 
-That is the point of the gate. A window that paused whenever you looked away
-could stay open indefinitely for someone who only dips in, and a gate that
-stays open is not a gate.
+That is deliberate. A window that paused whenever you looked away could stay
+open indefinitely for someone who only dips in.
 
 ## When you genuinely cannot do reps
 
 There are three emergency bypasses a day. They exist because sometimes you
 need an app now and a floor is not available.
 
-They are not free. Each bypass doubles the reps that app costs on your next
-unlock, and the doubling clears only after one clean unlock at the higher
-price. Spend all three in a day and your blocking setup resets, so you have
-to deliberately build it again.
+They are not free. Each bypass doubles the reps on a later unlock, and the
+doubling clears after one clean unlock at the higher price. Try a fourth and
+your blocking setup resets, so you have to deliberately build it again.
 
 The design goal is that a bypass is always available and never comfortable.
 

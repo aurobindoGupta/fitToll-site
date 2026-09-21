@@ -11,9 +11,8 @@ faq:
   - q: Can I skip the exercise?
     a: >-
       There's no skip button. You get three emergency bypasses a day, and each
-      one doubles the reps for that app on your next unlock — the doubling only
-      clears after a clean unlock. Spend all three and your blocking setup
-      resets.
+      one doubles the reps on a later unlock; the doubling clears after a clean
+      unlock. Try a fourth and your blocking setup resets.
   - q: Does my camera video go anywhere?
     a: >-
       No. Nothing is recorded and nothing is uploaded. Detection runs on your
@@ -32,12 +31,11 @@ faq:
       Free to download. The free tier blocks one app and includes both
       exercises. Premium is $5.99/month or $29.99/year and lifts the one-app
       limit.
-  - q: How long does an app stay unlocked?
+  - q: How long is an unlock window?
     a: >-
-      For the window you set: up to fifteen minutes on the free tier, up to two
-      hours on Premium. The window runs on real time from the moment the app
-      unlocks, so closing the app does not pause it and unused minutes are not
-      saved for later. When it ends, the app is blocked again.
+      Up to fifteen minutes on the free tier, up to two hours on Premium. The
+      window runs on real time from the moment the app unlocks, so closing the
+      app does not pause it and unused minutes are not saved for later.
 ---
 
 <section class="strip" markdown="1">
@@ -48,12 +46,12 @@ faq:
 
 <div class="step" markdown="1">
 ### Choose
-Pick the apps you keep losing time to. Instagram, TikTok, whatever yours are.
+Pick the apps you keep losing time to, like Instagram or TikTok.
 </div>
 
 <div class="step" markdown="1">
 ### Open
-Tap one and FitToll takes the screen before the app does.
+Tap one and FitToll's gate covers it.
 </div>
 
 <div class="step" markdown="1">
@@ -63,7 +61,7 @@ Push-ups or squats, counted live by your camera. Half-reps don't count.
 
 <div class="step" markdown="1">
 ### Unlock
-Hit the target and the app opens. The timer runs out, it locks again.
+Hit the target and the app opens.
 </div>
 
 </div>
@@ -89,13 +87,13 @@ No video is recorded and nothing is uploaded. The detection runs locally, and it
 </div>
 
 <div class="fact" markdown="1">
-#### Every unlock ends
-Fifteen minutes means fifteen minutes on the clock, starting when the app unlocks. Closing the app does not pause it, and when the time is up the app is blocked again.
+#### The clock does not pause
+Fifteen minutes means fifteen minutes on the clock, starting when the app unlocks. Closing the app does not pause it, and unused minutes are not saved.
 </div>
 
 <div class="fact" markdown="1">
 #### Three bypasses a day, and each costs you
-Every emergency bypass doubles the reps for that app on your next unlock, and the doubling only clears after a clean one. Spend all three and your blocking setup resets.
+Every emergency bypass doubles the reps on a later unlock, and the doubling clears after a clean one. Try a fourth and your blocking setup resets.
 </div>
 
 </div>

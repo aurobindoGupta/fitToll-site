@@ -1,7 +1,7 @@
 # FitToll
 
 > An app blocker that charges a physical toll. When you open an app you've
-> blocked, FitToll takes the screen first and asks for push-ups or squats,
+> blocked, FitToll's gate covers it and asks for push-ups or squats,
 > counted by your camera. Pose detection reads real joint angles, so the reps
 > have to be real. Everything runs on the device — no video is recorded and
 > nothing is uploaded.
@@ -25,13 +25,13 @@ Gupta. Tagline: "Pay the toll to scroll."
   unlocks. Closing the app does not pause it and unused minutes are not saved.
   Each app has its own window.
 - There is no skip button. There are three emergency bypasses per day; each one
-  doubles the reps for that app on the next unlock, the doubling clears only
-  after a clean unlock, and spending all three resets your blocking setup.
+  doubles the reps on a later unlock, the doubling clears after a clean unlock,
+  and trying a fourth resets your blocking setup.
 
 ## Pricing
 
 - Free: block one app, both exercises (push-ups and squats) at all difficulties,
-  15-minute unlocks, last 7 days of stats.
+  unlocks of up to 15 minutes, last 7 days of stats.
 - Premium: $5.99/month or $29.99/year. Lifts the one-app limit, allows longer
   unlock durations, and shows the full 90 days of stored exercise history.
 - Exercise sessions are deleted from the device after 90 days on both tiers.

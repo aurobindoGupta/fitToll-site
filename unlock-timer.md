@@ -4,8 +4,7 @@ title: Unlock Timer
 seo_title: "How the Unlock Timer Works | FitToll"
 description: >-
   Every FitToll unlock is a fixed window of real time. It starts when the app
-  unlocks, keeps running when you close the app, and ends with the block back
-  in place.
+  unlocks and keeps running when you close the app.
 eyebrow: Guide
 redirect_from:
   - /active-use-timer/
@@ -28,24 +27,19 @@ faq:
   - q: How long can an unlock window be?
     a: >-
       Up to 15 minutes on the free tier. Premium allows windows of up to 2 hours.
-  - q: What happens when the window ends?
-    a: >-
-      The app is blocked again. Opening it means doing the reps again.
 ---
 
 FitToll's unlock window is a fixed stretch of real time. It starts the moment
-the app unlocks, keeps running whether or not you are in the app, and then it
-ends.
+the app unlocks and keeps running whether or not you are in the app.
 
 ## Why a fixed window
 
 A timer that pauses whenever you leave the app sounds generous. In practice it
 means an unlock never has to run out. Dip in for a minute at a time and a
-fifteen-minute window can stay open for days — and a gate that stays open is
-not a gate.
+fifteen-minute window can stay open for days.
 
-A fixed window keeps the deal simple. You paid the toll, you get the time, and
-then the toll is due again.
+A fixed window keeps the deal simple: you paid the toll, and you get the time
+you set.
 
 ## How the timer works
 
@@ -54,8 +48,6 @@ then the toll is due again.
   something else does not pause it.
 - Unused minutes are not saved. The next unlock is a new window.
 - Each app has its own window. Unlocking a second app does not touch the first.
-- When it ends, the app is blocked again, and opening it means doing the reps
-  again.
 
 ## How it fits with the rest of the gate
 
@@ -63,7 +55,7 @@ The timer is one part of a system that is deliberately hard to talk your way
 past:
 
 - **No skip button.** Three emergency bypasses a day, and each doubles the reps
-  you owe next time. More on
+  on a later unlock. More on
   [why there is no skip button]({{ '/no-skip-button/' | relative_url }}).
 - **Reps that cannot be faked.** Counting reads joint angles rather than
   motion, and half-reps do not count.

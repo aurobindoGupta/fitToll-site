@@ -4,23 +4,24 @@ title: No Skip Button
 seo_title: "The App Blocker With No Skip Button | FitToll"
 description: >-
   Most app blockers have a way out. FitToll has no skip button — three
-  emergency bypasses a day, and each one doubles the reps you owe next time.
+  emergency bypasses a day, and each one doubles the reps on a later unlock.
 eyebrow: Guide
 faq:
   - q: Is there really no skip button?
     a: >-
       There is no button that dismisses the gate and opens the app. What exists
       instead is an emergency bypass, limited to three a day, and each one
-      raises the price of your next unlock.
+      raises the price of a later unlock.
   - q: What happens when I use a bypass?
     a: >-
-      The app opens immediately, and the reps that app costs are doubled for
-      your next unlock. The doubling clears only after you complete one clean
-      unlock at the higher number.
-  - q: What if I use all three in one day?
+      Using a bypass unlocks the app, and the reps are doubled on a later unlock.
+      The doubling clears after you complete one clean unlock at the higher
+      number.
+  - q: What happens after all three are used?
     a: >-
-      Your blocking setup resets. You have to deliberately choose your apps and
-      rep counts again, which is a decision rather than a reflex.
+      Trying a fourth resets your blocking setup. You have to deliberately
+      choose your apps and blocking settings again, which is a decision rather
+      than a reflex.
   - q: Can I just uninstall the app?
     a: >-
       Yes. It's your phone. FitToll is designed to beat the unthinking reach for
@@ -31,11 +32,10 @@ faq:
       Paying changes how many apps you can block, not how strict the gate is.
 ---
 
-Most blocking apps have a way out, and the way out is usually one tap. A
-"skip for now", a five-minute snooze, a settings screen you can reach in
-four taps and turn the whole thing off from.
+Most blocking apps have a way out, and the way out is usually one tap on the
+block screen: a "skip for now", or a five-minute snooze.
 
-FitToll has none of those. There is no button that dismisses the gate.
+FitToll has neither. There is no button that dismisses the gate.
 
 ## Why a skip button defeats the point
 
@@ -60,11 +60,11 @@ nothing.
 
 So the bypass is always available. It is simply never free:
 
-- **Using one doubles the reps** that app costs on your next unlock.
-- **The doubling clears only after one clean unlock** at the higher number.
-  You cannot wait it out — you have to pay it back once.
-- **Spending all three in a day resets your blocking setup.** Your apps and
-  rep counts are gone and you have to choose them again deliberately.
+- **Using one doubles the reps** on a later unlock.
+- **The doubling clears after one clean unlock** at the higher number.
+  Waiting does not clear it.
+- **A fourth resets your blocking setup.** Your blocked apps and blocking
+  settings are cleared and you have to choose them again deliberately.
 
 The result is that the escape hatch stays open, and reaching for it costs
 enough that the reflex does not learn it.
@@ -90,15 +90,14 @@ push-up from a sag.
 This matters for the same reason the missing skip button matters. A gate you
 can talk your way past is not a gate.
 
-## And every unlock ends
+## And the clock does not pause
 
-When the reps are done, the app opens for the unlock window you set. That
-window is real time, counted from the moment the app unlocks — closing the app
-does not pause it.
+When the reps are done, your unlock window starts. It is real time, counted
+from the moment the app unlocks — closing the app does not pause it.
 
 That is deliberate. A timer that pauses whenever you leave the app never has
 to run out: dip in for a minute at a time and a fifteen-minute unlock can stay
-open for days. A fixed window means the gate always comes back.
+open for days.
 
 There is more on that in [how the unlock timer works]({{ '/unlock-timer/' | relative_url }}).
 
